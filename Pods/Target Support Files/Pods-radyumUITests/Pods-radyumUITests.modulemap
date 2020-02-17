@@ -1,0 +1,6 @@
+framework module Pods_radyumUITests {
+  umbrella header "Pods-radyumUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

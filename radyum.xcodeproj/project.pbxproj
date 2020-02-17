@@ -1,0 +1,815 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3D03AA0423D6E0A8001D08DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D03AA0323D6E0A8001D08DC /* AppDelegate.swift */; };
+		3D03AA0623D6E0A8001D08DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D03AA0523D6E0A8001D08DC /* SceneDelegate.swift */; };
+		3D03AA0B23D6E0A8001D08DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D03AA0923D6E0A8001D08DC /* Main.storyboard */; };
+		3D03AA0D23D6E0A9001D08DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D03AA0C23D6E0A9001D08DC /* Assets.xcassets */; };
+		3D03AA1023D6E0A9001D08DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D03AA0E23D6E0A9001D08DC /* LaunchScreen.storyboard */; };
+		3D03AA1B23D6E0A9001D08DC /* radyumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D03AA1A23D6E0A9001D08DC /* radyumTests.swift */; };
+		3D03AA2623D6E0A9001D08DC /* radyumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D03AA2523D6E0A9001D08DC /* radyumUITests.swift */; };
+		3D03AA3423D6E2F1001D08DC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D03AA3323D6E2F1001D08DC /* LoginViewController.swift */; };
+		3D03AA3623D6E4AA001D08DC /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D03AA3523D6E4AA001D08DC /* SignUpViewController.swift */; };
+		3D03AA3823D6E619001D08DC /* MapPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D03AA3723D6E619001D08DC /* MapPageViewController.swift */; };
+		3D03AA3E23D6E74F001D08DC /* ProfilePgeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D03AA3D23D6E74F001D08DC /* ProfilePgeViewController.swift */; };
+		3D03AA4023D6E826001D08DC /* FeedPageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D03AA3F23D6E826001D08DC /* FeedPageTableViewController.swift */; };
+		3D03AA4323D6E87A001D08DC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D03AA4223D6E87A001D08DC /* User.swift */; };
+		3D03AA4523D6EBF2001D08DC /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D03AA4423D6EBF2001D08DC /* Restaurant.swift */; };
+		3D03AA4723D6ED57001D08DC /* RestaurantProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D03AA4623D6ED57001D08DC /* RestaurantProfilePageViewController.swift */; };
+		3D03AA4923D6F58D001D08DC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3D03AA4823D6F58D001D08DC /* GoogleService-Info.plist */; };
+		3D03AA4B23D706BC001D08DC /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D03AA4A23D706BC001D08DC /* Model.swift */; };
+		3D03AA4D23D70920001D08DC /* ModelSQL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D03AA4C23D70920001D08DC /* ModelSQL.swift */; };
+		3D03AA4F23D7227A001D08DC /* ModelFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D03AA4E23D7227A001D08DC /* ModelFirebase.swift */; };
+		3D03AA5123D722A4001D08DC /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D03AA5023D722A4001D08DC /* Review.swift */; };
+		3D5E857C23D751C000092A01 /* Firebase+User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5E857B23D751C000092A01 /* Firebase+User.swift */; };
+		3DD72FCE23FACA7E004724B5 /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD72FCD23FACA7E004724B5 /* SpinnerViewController.swift */; };
+		3DD72FD023FAD599004724B5 /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD72FCF23FAD599004724B5 /* RestaurantTableViewCell.swift */; };
+		3DD72FD223FADDC1004724B5 /* RestaurantsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD72FD123FADDC1004724B5 /* RestaurantsTableViewController.swift */; };
+		3E381B3D9D1AFB35DBAEACC0 /* Pods_radyumTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B95045E90261529CAAB4CB14 /* Pods_radyumTests.framework */; };
+		9074F29F1DB4FC050589B0FB /* Pods_radyum.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E53CA96C030020438F1CE906 /* Pods_radyum.framework */; };
+		A3CC5703466B0AB73ACC07A4 /* Pods_radyumUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB513E5F31A448B481218168 /* Pods_radyumUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3D03AA1723D6E0A9001D08DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3D03A9F823D6E0A8001D08DC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3D03A9FF23D6E0A8001D08DC;
+			remoteInfo = radyum;
+		};
+		3D03AA2223D6E0A9001D08DC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3D03A9F823D6E0A8001D08DC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3D03A9FF23D6E0A8001D08DC;
+			remoteInfo = radyum;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		09557A1D94D9EB6B84FF30A9 /* Pods-radyum.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-radyum.release.xcconfig"; path = "Target Support Files/Pods-radyum/Pods-radyum.release.xcconfig"; sourceTree = "<group>"; };
+		33141E08BCE45C8249DD917D /* Pods-radyumTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-radyumTests.debug.xcconfig"; path = "Target Support Files/Pods-radyumTests/Pods-radyumTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3D03AA0023D6E0A8001D08DC /* radyum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = radyum.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D03AA0323D6E0A8001D08DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3D03AA0523D6E0A8001D08DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		3D03AA0A23D6E0A8001D08DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3D03AA0C23D6E0A9001D08DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3D03AA0F23D6E0A9001D08DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3D03AA1123D6E0A9001D08DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D03AA1623D6E0A9001D08DC /* radyumTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = radyumTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D03AA1A23D6E0A9001D08DC /* radyumTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = radyumTests.swift; sourceTree = "<group>"; };
+		3D03AA1C23D6E0A9001D08DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D03AA2123D6E0A9001D08DC /* radyumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = radyumUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D03AA2523D6E0A9001D08DC /* radyumUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = radyumUITests.swift; sourceTree = "<group>"; };
+		3D03AA2723D6E0AA001D08DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D03AA3323D6E2F1001D08DC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3D03AA3523D6E4AA001D08DC /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		3D03AA3723D6E619001D08DC /* MapPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPageViewController.swift; sourceTree = "<group>"; };
+		3D03AA3D23D6E74F001D08DC /* ProfilePgeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePgeViewController.swift; sourceTree = "<group>"; };
+		3D03AA3F23D6E826001D08DC /* FeedPageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPageTableViewController.swift; sourceTree = "<group>"; };
+		3D03AA4223D6E87A001D08DC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		3D03AA4423D6EBF2001D08DC /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		3D03AA4623D6ED57001D08DC /* RestaurantProfilePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantProfilePageViewController.swift; sourceTree = "<group>"; };
+		3D03AA4823D6F58D001D08DC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3D03AA4A23D706BC001D08DC /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		3D03AA4C23D70920001D08DC /* ModelSQL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSQL.swift; sourceTree = "<group>"; };
+		3D03AA4E23D7227A001D08DC /* ModelFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFirebase.swift; sourceTree = "<group>"; };
+		3D03AA5023D722A4001D08DC /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		3D5E857B23D751C000092A01 /* Firebase+User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firebase+User.swift"; sourceTree = "<group>"; };
+		3DD72FCD23FACA7E004724B5 /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
+		3DD72FCF23FAD599004724B5 /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
+		3DD72FD123FADDC1004724B5 /* RestaurantsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsTableViewController.swift; sourceTree = "<group>"; };
+		A658D976DAB8B560BFF25F1E /* Pods-radyumUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-radyumUITests.release.xcconfig"; path = "Target Support Files/Pods-radyumUITests/Pods-radyumUITests.release.xcconfig"; sourceTree = "<group>"; };
+		B95045E90261529CAAB4CB14 /* Pods_radyumTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_radyumTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD162D4118BBAB67B4C36BCC /* Pods-radyum.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-radyum.debug.xcconfig"; path = "Target Support Files/Pods-radyum/Pods-radyum.debug.xcconfig"; sourceTree = "<group>"; };
+		CE8264D92AB2364E3F4AF67D /* Pods-radyumUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-radyumUITests.debug.xcconfig"; path = "Target Support Files/Pods-radyumUITests/Pods-radyumUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E53CA96C030020438F1CE906 /* Pods_radyum.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_radyum.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA0A7EB1BEA8870AD29F8270 /* Pods-radyumTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-radyumTests.release.xcconfig"; path = "Target Support Files/Pods-radyumTests/Pods-radyumTests.release.xcconfig"; sourceTree = "<group>"; };
+		FB513E5F31A448B481218168 /* Pods_radyumUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_radyumUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3D03A9FD23D6E0A8001D08DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9074F29F1DB4FC050589B0FB /* Pods_radyum.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D03AA1323D6E0A9001D08DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3E381B3D9D1AFB35DBAEACC0 /* Pods_radyumTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D03AA1E23D6E0A9001D08DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3CC5703466B0AB73ACC07A4 /* Pods_radyumUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3D03A9F723D6E0A8001D08DC = {
+			isa = PBXGroup;
+			children = (
+				3D03AA0223D6E0A8001D08DC /* radyum */,
+				3D03AA1923D6E0A9001D08DC /* radyumTests */,
+				3D03AA2423D6E0A9001D08DC /* radyumUITests */,
+				3D03AA0123D6E0A8001D08DC /* Products */,
+				6CC71F1231CEEE529E55A5D0 /* Pods */,
+				7DBAED48C7509CB26D6E28D2 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3D03AA0123D6E0A8001D08DC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3D03AA0023D6E0A8001D08DC /* radyum.app */,
+				3D03AA1623D6E0A9001D08DC /* radyumTests.xctest */,
+				3D03AA2123D6E0A9001D08DC /* radyumUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3D03AA0223D6E0A8001D08DC /* radyum */ = {
+			isa = PBXGroup;
+			children = (
+				3D03AA4823D6F58D001D08DC /* GoogleService-Info.plist */,
+				3D03AA4123D6E85B001D08DC /* Model */,
+				3D03AA0323D6E0A8001D08DC /* AppDelegate.swift */,
+				3D03AA0523D6E0A8001D08DC /* SceneDelegate.swift */,
+				3D03AA0923D6E0A8001D08DC /* Main.storyboard */,
+				3D03AA0C23D6E0A9001D08DC /* Assets.xcassets */,
+				3D03AA0E23D6E0A9001D08DC /* LaunchScreen.storyboard */,
+				3D03AA1123D6E0A9001D08DC /* Info.plist */,
+				3D03AA3323D6E2F1001D08DC /* LoginViewController.swift */,
+				3D03AA3523D6E4AA001D08DC /* SignUpViewController.swift */,
+				3D03AA3723D6E619001D08DC /* MapPageViewController.swift */,
+				3D03AA3D23D6E74F001D08DC /* ProfilePgeViewController.swift */,
+				3D03AA3F23D6E826001D08DC /* FeedPageTableViewController.swift */,
+				3D03AA4623D6ED57001D08DC /* RestaurantProfilePageViewController.swift */,
+				3DD72FCD23FACA7E004724B5 /* SpinnerViewController.swift */,
+				3DD72FCF23FAD599004724B5 /* RestaurantTableViewCell.swift */,
+				3DD72FD123FADDC1004724B5 /* RestaurantsTableViewController.swift */,
+			);
+			path = radyum;
+			sourceTree = "<group>";
+		};
+		3D03AA1923D6E0A9001D08DC /* radyumTests */ = {
+			isa = PBXGroup;
+			children = (
+				3D03AA1A23D6E0A9001D08DC /* radyumTests.swift */,
+				3D03AA1C23D6E0A9001D08DC /* Info.plist */,
+			);
+			path = radyumTests;
+			sourceTree = "<group>";
+		};
+		3D03AA2423D6E0A9001D08DC /* radyumUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3D03AA2523D6E0A9001D08DC /* radyumUITests.swift */,
+				3D03AA2723D6E0AA001D08DC /* Info.plist */,
+			);
+			path = radyumUITests;
+			sourceTree = "<group>";
+		};
+		3D03AA4123D6E85B001D08DC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3D03AA4223D6E87A001D08DC /* User.swift */,
+				3D03AA4423D6EBF2001D08DC /* Restaurant.swift */,
+				3D03AA4A23D706BC001D08DC /* Model.swift */,
+				3D03AA4C23D70920001D08DC /* ModelSQL.swift */,
+				3D03AA4E23D7227A001D08DC /* ModelFirebase.swift */,
+				3D03AA5023D722A4001D08DC /* Review.swift */,
+				3D5E857B23D751C000092A01 /* Firebase+User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6CC71F1231CEEE529E55A5D0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CD162D4118BBAB67B4C36BCC /* Pods-radyum.debug.xcconfig */,
+				09557A1D94D9EB6B84FF30A9 /* Pods-radyum.release.xcconfig */,
+				33141E08BCE45C8249DD917D /* Pods-radyumTests.debug.xcconfig */,
+				FA0A7EB1BEA8870AD29F8270 /* Pods-radyumTests.release.xcconfig */,
+				CE8264D92AB2364E3F4AF67D /* Pods-radyumUITests.debug.xcconfig */,
+				A658D976DAB8B560BFF25F1E /* Pods-radyumUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7DBAED48C7509CB26D6E28D2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E53CA96C030020438F1CE906 /* Pods_radyum.framework */,
+				B95045E90261529CAAB4CB14 /* Pods_radyumTests.framework */,
+				FB513E5F31A448B481218168 /* Pods_radyumUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3D03A9FF23D6E0A8001D08DC /* radyum */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D03AA2A23D6E0AA001D08DC /* Build configuration list for PBXNativeTarget "radyum" */;
+			buildPhases = (
+				73160AB24B28F9B3A975C940 /* [CP] Check Pods Manifest.lock */,
+				3D03A9FC23D6E0A8001D08DC /* Sources */,
+				3D03A9FD23D6E0A8001D08DC /* Frameworks */,
+				3D03A9FE23D6E0A8001D08DC /* Resources */,
+				2B2B617E53E4F855BA601DC0 /* [CP] Embed Pods Frameworks */,
+				4F2355A4DC727A97A7429D54 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = radyum;
+			productName = radyum;
+			productReference = 3D03AA0023D6E0A8001D08DC /* radyum.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3D03AA1523D6E0A9001D08DC /* radyumTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D03AA2D23D6E0AA001D08DC /* Build configuration list for PBXNativeTarget "radyumTests" */;
+			buildPhases = (
+				FAAB95569FC3A1353159B6B3 /* [CP] Check Pods Manifest.lock */,
+				3D03AA1223D6E0A9001D08DC /* Sources */,
+				3D03AA1323D6E0A9001D08DC /* Frameworks */,
+				3D03AA1423D6E0A9001D08DC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3D03AA1823D6E0A9001D08DC /* PBXTargetDependency */,
+			);
+			name = radyumTests;
+			productName = radyumTests;
+			productReference = 3D03AA1623D6E0A9001D08DC /* radyumTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3D03AA2023D6E0A9001D08DC /* radyumUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D03AA3023D6E0AA001D08DC /* Build configuration list for PBXNativeTarget "radyumUITests" */;
+			buildPhases = (
+				286AC4C52FA1A80953F817E3 /* [CP] Check Pods Manifest.lock */,
+				3D03AA1D23D6E0A9001D08DC /* Sources */,
+				3D03AA1E23D6E0A9001D08DC /* Frameworks */,
+				3D03AA1F23D6E0A9001D08DC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3D03AA2323D6E0A9001D08DC /* PBXTargetDependency */,
+			);
+			name = radyumUITests;
+			productName = radyumUITests;
+			productReference = 3D03AA2123D6E0A9001D08DC /* radyumUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3D03A9F823D6E0A8001D08DC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = Studio;
+				TargetAttributes = {
+					3D03A9FF23D6E0A8001D08DC = {
+						CreatedOnToolsVersion = 11.2;
+					};
+					3D03AA1523D6E0A9001D08DC = {
+						CreatedOnToolsVersion = 11.2;
+						TestTargetID = 3D03A9FF23D6E0A8001D08DC;
+					};
+					3D03AA2023D6E0A9001D08DC = {
+						CreatedOnToolsVersion = 11.2;
+						TestTargetID = 3D03A9FF23D6E0A8001D08DC;
+					};
+				};
+			};
+			buildConfigurationList = 3D03A9FB23D6E0A8001D08DC /* Build configuration list for PBXProject "radyum" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3D03A9F723D6E0A8001D08DC;
+			productRefGroup = 3D03AA0123D6E0A8001D08DC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3D03A9FF23D6E0A8001D08DC /* radyum */,
+				3D03AA1523D6E0A9001D08DC /* radyumTests */,
+				3D03AA2023D6E0A9001D08DC /* radyumUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3D03A9FE23D6E0A8001D08DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D03AA1023D6E0A9001D08DC /* LaunchScreen.storyboard in Resources */,
+				3D03AA4923D6F58D001D08DC /* GoogleService-Info.plist in Resources */,
+				3D03AA0D23D6E0A9001D08DC /* Assets.xcassets in Resources */,
+				3D03AA0B23D6E0A8001D08DC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D03AA1423D6E0A9001D08DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D03AA1F23D6E0A9001D08DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		286AC4C52FA1A80953F817E3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-radyumUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2B2B617E53E4F855BA601DC0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-radyum/Pods-radyum-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-radyum/Pods-radyum-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-radyum/Pods-radyum-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4F2355A4DC727A97A7429D54 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-radyum/Pods-radyum-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-radyum/Pods-radyum-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-radyum/Pods-radyum-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		73160AB24B28F9B3A975C940 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-radyum-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FAAB95569FC3A1353159B6B3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-radyumTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3D03A9FC23D6E0A8001D08DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D03AA4523D6EBF2001D08DC /* Restaurant.swift in Sources */,
+				3D03AA3423D6E2F1001D08DC /* LoginViewController.swift in Sources */,
+				3DD72FD223FADDC1004724B5 /* RestaurantsTableViewController.swift in Sources */,
+				3D03AA4323D6E87A001D08DC /* User.swift in Sources */,
+				3D03AA3823D6E619001D08DC /* MapPageViewController.swift in Sources */,
+				3D03AA4023D6E826001D08DC /* FeedPageTableViewController.swift in Sources */,
+				3D03AA4D23D70920001D08DC /* ModelSQL.swift in Sources */,
+				3DD72FCE23FACA7E004724B5 /* SpinnerViewController.swift in Sources */,
+				3D03AA4B23D706BC001D08DC /* Model.swift in Sources */,
+				3D5E857C23D751C000092A01 /* Firebase+User.swift in Sources */,
+				3D03AA5123D722A4001D08DC /* Review.swift in Sources */,
+				3D03AA0423D6E0A8001D08DC /* AppDelegate.swift in Sources */,
+				3D03AA3E23D6E74F001D08DC /* ProfilePgeViewController.swift in Sources */,
+				3D03AA0623D6E0A8001D08DC /* SceneDelegate.swift in Sources */,
+				3D03AA4723D6ED57001D08DC /* RestaurantProfilePageViewController.swift in Sources */,
+				3D03AA4F23D7227A001D08DC /* ModelFirebase.swift in Sources */,
+				3DD72FD023FAD599004724B5 /* RestaurantTableViewCell.swift in Sources */,
+				3D03AA3623D6E4AA001D08DC /* SignUpViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D03AA1223D6E0A9001D08DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D03AA1B23D6E0A9001D08DC /* radyumTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D03AA1D23D6E0A9001D08DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D03AA2623D6E0A9001D08DC /* radyumUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3D03AA1823D6E0A9001D08DC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3D03A9FF23D6E0A8001D08DC /* radyum */;
+			targetProxy = 3D03AA1723D6E0A9001D08DC /* PBXContainerItemProxy */;
+		};
+		3D03AA2323D6E0A9001D08DC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3D03A9FF23D6E0A8001D08DC /* radyum */;
+			targetProxy = 3D03AA2223D6E0A9001D08DC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3D03AA0923D6E0A8001D08DC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3D03AA0A23D6E0A8001D08DC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3D03AA0E23D6E0A9001D08DC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3D03AA0F23D6E0A9001D08DC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3D03AA2823D6E0AA001D08DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3D03AA2923D6E0AA001D08DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3D03AA2B23D6E0AA001D08DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD162D4118BBAB67B4C36BCC /* Pods-radyum.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = radyum/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = g.radyum;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3D03AA2C23D6E0AA001D08DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09557A1D94D9EB6B84FF30A9 /* Pods-radyum.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = radyum/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = g.radyum;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3D03AA2E23D6E0AA001D08DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33141E08BCE45C8249DD917D /* Pods-radyumTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = radyumTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = g.radyumTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/radyum.app/radyum";
+			};
+			name = Debug;
+		};
+		3D03AA2F23D6E0AA001D08DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA0A7EB1BEA8870AD29F8270 /* Pods-radyumTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = radyumTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = g.radyumTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/radyum.app/radyum";
+			};
+			name = Release;
+		};
+		3D03AA3123D6E0AA001D08DC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE8264D92AB2364E3F4AF67D /* Pods-radyumUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = radyumUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = g.radyumUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = radyum;
+			};
+			name = Debug;
+		};
+		3D03AA3223D6E0AA001D08DC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A658D976DAB8B560BFF25F1E /* Pods-radyumUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = radyumUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = g.radyumUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = radyum;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3D03A9FB23D6E0A8001D08DC /* Build configuration list for PBXProject "radyum" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D03AA2823D6E0AA001D08DC /* Debug */,
+				3D03AA2923D6E0AA001D08DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3D03AA2A23D6E0AA001D08DC /* Build configuration list for PBXNativeTarget "radyum" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D03AA2B23D6E0AA001D08DC /* Debug */,
+				3D03AA2C23D6E0AA001D08DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3D03AA2D23D6E0AA001D08DC /* Build configuration list for PBXNativeTarget "radyumTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D03AA2E23D6E0AA001D08DC /* Debug */,
+				3D03AA2F23D6E0AA001D08DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3D03AA3023D6E0AA001D08DC /* Build configuration list for PBXNativeTarget "radyumUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D03AA3123D6E0AA001D08DC /* Debug */,
+				3D03AA3223D6E0AA001D08DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3D03A9F823D6E0A8001D08DC /* Project object */;
+}
