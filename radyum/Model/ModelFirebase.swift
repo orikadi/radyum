@@ -11,8 +11,6 @@ import Firebase
 
 class ModelFirebase{
     
-    static let instance = ModelFirebase()
-    
     //adds new user to firebase
     func addUser(email:String, name: String) {
         let db = Firestore.firestore()
@@ -45,6 +43,29 @@ class ModelFirebase{
         }
         return user
     }
+    
+    func getAllRestaurants(since:Int64, callback: @escaping ([Restaurant]?)->Void){
+         let db = Firestore.firestore()
+         db.collection("restaurants").order(by: "lastUpdate").start(at: [Timestamp(seconds: since, nanoseconds: 0)]).getDocuments { (querySnapshot, err) in
+             if let err = err {
+                 print("Error getting documents: \(err)")
+                 callback(nil);
+             } else {
+                 var data = [Restaurant]();
+                 for document in querySnapshot!.documents {
+                     if let ts = document.data()["lastUpdate"] as? Timestamp{
+                         let tsDate = ts.dateValue();
+                         print("\(tsDate)");
+                         let tsDouble = tsDate.timeIntervalSince1970;
+                         print("\(tsDouble)");
+
+                     }
+                     data.append(Restaurant(json: document.data()));
+                 }
+                 callback(data);
+             }
+         };
+     }
     
     //add a restaurant to firebase
 //    func addRestaurant(email:String, name: String) {

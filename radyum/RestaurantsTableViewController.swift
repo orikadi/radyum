@@ -11,15 +11,28 @@ import UIKit
 class RestaurantsTableViewController: UITableViewController {
 
     @IBOutlet var searchBar: UITableView!
+     var data = [Restaurant]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl?.addTarget(self, action: #selector(reloadData), for: .valueChanged)
+         
+        ModelEvents.RestaurantDataEvent.observe {
+            self.refreshControl?.beginRefreshing()
+            self.reloadData();
+        }
+         self.refreshControl?.beginRefreshing()
+         reloadData();
+    }
+    @objc func reloadData(){
+          Model.instance.getAllRestaurants { (_data:[Restaurant]?) in
+          if (_data != nil) {
+              self.data = _data!;
+              self.tableView.reloadData();
+              }
+              self.refreshControl?.endRefreshing()
+          };
     }
 
     // MARK: - Table view data source

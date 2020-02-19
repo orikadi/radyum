@@ -9,14 +9,22 @@
 import Foundation
 
 class Restaurant{
-    var name:String
+    let id:String
+    var name:String	
     var address:String
     var picture:String?
+    var lastUpdate: Int64?
     
-    init(name:String, address:String){
+    init(id:String, name:String, address:String){
+        self.id = id
         self.name = name
         self.address = address
     }
+    
+//    init(name:String, address:String){
+//        self.name = name
+//        self.address = address
+//    }
 }
 
 
