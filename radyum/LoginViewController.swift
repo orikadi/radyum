@@ -26,14 +26,25 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func login(_ sender: Any) {
+        let child = SpinnerViewController()
+        addChild(child)
+        child.view.frame = view.frame
+        view.addSubview(child.view)
+        child.didMove(toParent: self)
         Auth.auth().signIn(withEmail: emailText.text!, password: passwordText.text!, completion: { (user,error) in
             if error != nil {   
                 let alert = UIAlertController(title: "WARNING", message: "Wrong credentials", preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction(title:"CONFIRM", style:UIAlertAction.Style.default, handler: {(action) in
                     //alert.dismiss(animated: true, completion: nil)
                 }))
+                child.willMove(toParent: nil)
+                child.view.removeFromSuperview()
+                child.removeFromParent()
                 self.present(alert, animated:true, completion:nil)
             } else {
+                child.willMove(toParent: nil)
+                child.view.removeFromSuperview()
+                child.removeFromParent()
                 self.performSegue(withIdentifier: "fromLoginToTabBar", sender: self)
             }
         })

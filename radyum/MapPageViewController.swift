@@ -7,27 +7,90 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
-class MapPageViewController: UIViewController {
+class MapPageViewController: UIViewController,CLLocationManagerDelegate {
 
-    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var mapView: MKMapView!
     
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    let locationManager = CLLocationManager()
+        let regionInMeters: Double = 10000
+        
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            checkLocationServices()
+        }
+        
+        
+        func setupLocationManager() {
+            locationManager.delegate = self as CLLocationManagerDelegate
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        }
+        
+        
+        func centerViewOnUserLocation() {
+            if let location = locationManager.location?.coordinate {
+                let region = MKCoordinateRegion.init(center: location, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
+                mapView.setRegion(region, animated: true)
+            }
+        }
+        
+        
+        func checkLocationServices() {
+            if CLLocationManager.locationServicesEnabled() {
+                setupLocationManager()
+                checkLocationAuthorization()
+            } else {
+                // Show alert letting the user know they have to turn this on.
+            }
+        }
+        
+        
+        func checkLocationAuthorization() {
+            switch CLLocationManager.authorizationStatus() {
+            case .authorizedWhenInUse:
+                mapView.showsUserLocation = true
+                centerViewOnUserLocation()
+                locationManager.startUpdatingLocation()
+                break
+            case .denied:
+                // Show alert instructing them how to turn on permissions
+                let alert = UIAlertController(title: "WARNING", message: "permissioms", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title:"CONFIRM", style:UIAlertAction.Style.default, handler: {(action) in
+                    //alert.dismiss(animated: true, completion: nil)
+                }))
+                break
+            case .notDetermined:
+                locationManager.requestWhenInUseAuthorization()
+            case .restricted:
+                // Show an alert letting them know what's up
+                let alert = UIAlertController(title: "WARNING", message: "restricted", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title:"CONFIRM", style:UIAlertAction.Style.default, handler: {(action) in
+                    //alert.dismiss(animated: true, completion: nil)
+                }))
+                break
+            case .authorizedAlways:
+                break
+            }
+        }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.last else { return }
+        let region = MKCoordinateRegion.init(center: location.coordinate, latitudinalMeters: regionInMeters, longitudinalMeters: regionInMeters)
+        mapView.setRegion(region, animated: true)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        checkLocationAuthorization()
     }
-    */
-
+    
+    func getAnnotations(){
+        
+    }
 }
+
+
+
