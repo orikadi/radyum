@@ -21,7 +21,8 @@ class ProfilePgeViewController: UIViewController {
        
         //TODO: add tabbarcontroller and add a prepare function for profile segue, so you can populate the user var before entering the profile
         
-        let user = ModelFirebase.instance.getCurrentUser()
+        //let user = ModelFirebase.instance.getCurrentUser()
+        let user = Model.modelFirebaseInstance.getCurrentUser()
 //        userNameTitle.text = user!.name
 //        numOfReviewsTitle.text = String(user!.numOfReviews!)
 //        if user!.avatar != ""{

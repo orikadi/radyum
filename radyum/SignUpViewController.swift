@@ -83,7 +83,7 @@ class SignUpViewController: UIViewController {
                 }
             } else {
                 //continue to app
-                ModelFirebase.instance.addUser(email: self.emailText.text!, name: self.userText.text!)
+                Model.modelFirebaseInstance.addUser(email: self.emailText.text!, name: self.userText.text!)
                 //end spinner
                 child.willMove(toParent: nil)
                 child.view.removeFromSuperview()

@@ -25,6 +25,7 @@ class RestaurantsTableViewController: UITableViewController {
          self.refreshControl?.beginRefreshing()
          reloadData();
     }
+    
     @objc func reloadData(){
           Model.instance.getAllRestaurants { (_data:[Restaurant]?) in
           if (_data != nil) {

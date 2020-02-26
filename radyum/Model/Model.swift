@@ -12,7 +12,8 @@ import Firebase
 class Model{
     
     static let instance = Model()
-    var modelFirebase:ModelFirebase = ModelFirebase()
+    //var modelFirebase:ModelFirebase = ModelFirebase()
+    static let modelFirebaseInstance:ModelFirebase = ModelFirebase()
     
      func getAllRestaurants(callback:@escaping ([Restaurant]?)->Void){
         
@@ -20,20 +21,21 @@ class Model{
         let lud = Restaurant.getLastUpdateDate();
         
         //get the cloud updates since the local update date
-        modelFirebase.getAllRestaurants(since:lud) { (data) in
+        Model.modelFirebaseInstance.getAllRestaurants(since:lud) { (data) in
             //insert update to the local db
             var lud:Int64 = 0;
             for student in data!{
                 student.addToDb()
                 if student.lastUpdate! > lud {lud = student.lastUpdate!}
             }
-            //update the students local last update date
-            Student.setLastUpdate(lastUpdated: lud)
+            //update the restaurants local last update date
+            Restaurant.setLastUpdate(lastUpdated: lud)
             // get the complete student list
-            let finalData = Student.getAllStudentsFromDb()
+            let finalData = Restaurant.getAllRestaurantsFromDb()
             callback(finalData);
         }
     }
+}
     
     class ModelEvents{
         static let RestaurantDataEvent = EventNotificationBase(eventName: "com.radyum.RestaurantDataEvent")
@@ -62,4 +64,4 @@ class Model{
         }
     }
 
-}
+
