@@ -11,8 +11,9 @@ import Foundation
 class Restaurant{
     let id:String
     var name:String	
-    var address:String
-    var picture:String?
+    var address:String = "" //changed
+    var geoPoint:String = "" //added
+    var picture:String = "" //changed
     var lastUpdate: Int64?
     
     init(id:String, name:String, address:String){

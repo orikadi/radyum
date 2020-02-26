@@ -48,7 +48,7 @@ class ModelSQL{
             sqlite3_bind_text(sqlite3_stmt, 1, name,-1,nil);
             sqlite3_bind_int64(sqlite3_stmt, 2, lastUpdated);
             if(sqlite3_step(sqlite3_stmt) == SQLITE_DONE){
-                print("new row added succefully")
+                print("set last restaurant update row successfully")
             }
         }
         sqlite3_finalize(sqlite3_stmt)
