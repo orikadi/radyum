@@ -38,7 +38,7 @@ class ModelFirebase{
                 user.name = data!["name"] as! String
                 user.avatar = data!["avatar"] as! String
             } else {
-                print("Document does not exist")
+                print("Current user document does not exist")
             }
         }
         return user

@@ -13,7 +13,7 @@ import Kingfisher
 class ProfilePgeViewController: UIViewController {
     var user:User?
     @IBOutlet weak var userNameTitle: UILabel!
-    @IBOutlet weak var numOfReviewsTitle: UILabel!
+//    @IBOutlet weak var numOfReviewsTitle: UILabel!
     @IBOutlet weak var picture: UIImageView!
     
     override func viewDidLoad() {
@@ -22,12 +22,17 @@ class ProfilePgeViewController: UIViewController {
         //TODO: add tabbarcontroller and add a prepare function for profile segue, so you can populate the user var before entering the profile
         
         //let user = ModelFirebase.instance.getCurrentUser()
-        let user = Model.modelFirebaseInstance.getCurrentUser()
-//        userNameTitle.text = user!.name
-//        numOfReviewsTitle.text = String(user!.numOfReviews!)
-//        if user!.avatar != ""{
-//            picture.kf.setImage(with: URL(string: user!.avatar!));
+        user = Model.currentUser
+        userNameTitle.text = user!.name
+//        if user!.reviews != nil {
+//            numOfReviewsTitle.text = String(user!.reviews!.count)
 //        }
+//        else {
+//            numOfReviewsTitle.text = String(0)
+//        }
+        if user!.avatar != ""{
+            picture.kf.setImage(with: URL(string: user!.avatar!));
+        }
     }
     
     

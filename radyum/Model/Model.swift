@@ -14,6 +14,7 @@ class Model{
     static let instance = Model()
     //var modelFirebase:ModelFirebase = ModelFirebase()
     static let modelFirebaseInstance:ModelFirebase = ModelFirebase()
+    static var currentUser:User?
     
      func getAllRestaurants(callback:@escaping ([Restaurant]?)->Void){
         

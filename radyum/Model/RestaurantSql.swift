@@ -33,7 +33,7 @@ extension Restaurant{
             sqlite3_bind_text(sqlite3_stmt, 2, address,-1,nil)
             sqlite3_bind_text(sqlite3_stmt, 3, picture,-1,nil)
             if(sqlite3_step(sqlite3_stmt) == SQLITE_DONE){
-                print("new row added successfully")
+                print("new restaurant row added successfully")
             }
         }
         sqlite3_finalize(sqlite3_stmt)
