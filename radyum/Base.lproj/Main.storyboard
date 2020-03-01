@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -178,7 +178,7 @@
         <!--Restaurant Profile Page View Controller-->
         <scene sceneID="GtL-RN-Bkq">
             <objects>
-                <viewController id="UVe-fr-dM8" customClass="RestaurantProfilePageViewController" customModule="radyum" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="UVe-fr-dM8" customClass="RestaurantProfilePageViewController" customModule="radyum" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wWM-Ag-T4q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -221,14 +221,18 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tB0-TK-dpT">
-                                <rect key="frame" x="22" y="8" width="34" height="30"/>
+                                <rect key="frame" x="16" y="20" width="34" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="3hn-8T-dAZ" kind="unwind" unwindAction="toMapWithSegue:" id="knE-Cb-3DY"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="uCt-Kd-5b6"/>
                     </view>
+                    <navigationItem key="navigationItem" id="lPP-Xk-KwX"/>
                     <connections>
                         <outlet property="Image" destination="cRP-hn-BTG" id="g3t-6B-sOl"/>
                         <outlet property="addressTitle" destination="2Rg-IQ-HZa" id="3En-WP-7lm"/>
@@ -237,6 +241,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e2S-YC-TKx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="3hn-8T-dAZ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2945" y="586"/>
         </scene>
@@ -368,6 +373,7 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Restaurants" id="cpg-tM-8cc"/>
+                    <navigationItem key="navigationItem" id="GL5-NO-bbz"/>
                     <connections>
                         <outlet property="searchBar" destination="bkc-B0-BjA" id="yCx-tm-15W"/>
                     </connections>
@@ -398,11 +404,12 @@
                     <tabBarItem key="tabBarItem" title="Map" id="Dgh-8H-s1E"/>
                     <connections>
                         <outlet property="mapView" destination="qo3-qA-ATv" id="USQ-d4-dbR"/>
+                        <segue destination="UVe-fr-dM8" kind="show" identifier="a" id="XFZ-Xb-z8J"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="exJ-FM-0Zd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1900" y="-125.4872563718141"/>
+            <point key="canvasLocation" x="1900" y="-282"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="lih-9k-Db5">

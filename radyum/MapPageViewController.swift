@@ -20,9 +20,18 @@ class MapPageViewController: UIViewController,CLLocationManagerDelegate {
         
         override func viewDidLoad() {
             super.viewDidLoad()
+            //
+           // mapView.delegate = self as! MKMapViewDelegate
+
+            let pointAno = MKPointAnnotation()
+            pointAno.title = "title"
+            pointAno.subtitle = "sub"
+            pointAno.coordinate = CLLocationCoordinate2D(latitude: 37.802654, longitude: -122.408827)
+            mapView.addAnnotation(pointAno)
+            //
             checkLocationServices()
         }
-        
+    
         
         func setupLocationManager() {
             locationManager.delegate = self as CLLocationManagerDelegate
@@ -88,9 +97,33 @@ class MapPageViewController: UIViewController,CLLocationManagerDelegate {
     }
     
     func getAnnotations(){
-        
+        //TODO: complete when DB is ready
     }
+    
+    @IBAction func toMap(segue:UIStoryboardSegue){}
 }
-
-
+//
+extension MapPageViewController: MKMapViewDelegate{
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        var annotView = mapView.dequeueReusableAnnotationView(withIdentifier: "AnnotationView")
+        if annotView == nil{
+            annotView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "AnnotationView")
+        }
+        if(annotation is MKUserLocation){
+            return nil
+        }
+        annotView?.rightCalloutAccessoryView = UIButton(type: .infoDark)
+        annotView?.canShowCallout = true
+        return annotView
+    }
+    
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        if(control == view.rightCalloutAccessoryView){
+            performSegue(withIdentifier: "a", sender: nil)
+        }
+    }
+    
+}
+//
 
