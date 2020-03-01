@@ -15,10 +15,12 @@ class ModelSQL{
     var database: OpaquePointer? = nil
     
     private init() {
-        let dbFileName = "database.db"
+        let dbFileName = "database2.db"
         if let dir = FileManager.default.urls(for: .documentDirectory, in:
             .userDomainMask).first{
             let path = dir.appendingPathComponent(dbFileName)
+            print(path.absoluteString)
+            print(path)
             if sqlite3_open(path.absoluteString, &database) != SQLITE_OK {
                 print("Failed to open db file: \(path.absoluteString)")
                 return

@@ -25,13 +25,15 @@ class Model{
         Model.modelFirebaseInstance.getAllRestaurants(since:lud) { (data) in
             //insert update to the local db
             var lud:Int64 = 0;
-            for student in data!{
-                student.addToDb()
-                if student.lastUpdate! > lud {lud = student.lastUpdate!}
+            for restaurant in data!{
+                restaurant.addToDb()
+                print("restaurant's current last update date") //test
+                if restaurant.lastUpdate! > lud {lud = restaurant.lastUpdate!}
             }
+            if (data!.count == 0) {print("no restaurants found")} //test
             //update the restaurants local last update date
             Restaurant.setLastUpdate(lastUpdated: lud)
-            // get the complete student list
+            // get the complete restaurant list
             let finalData = Restaurant.getAllRestaurantsFromDb()
             callback(finalData);
         }
