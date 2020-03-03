@@ -16,23 +16,14 @@ class MapPageViewController: UIViewController,CLLocationManagerDelegate {
     
     
     let locationManager = CLLocationManager()
-        let regionInMeters: Double = 10000
+        let regionInMeters: Double = 1000
         
         override func viewDidLoad() {
             super.viewDidLoad()
-            //
-           // mapView.delegate = self as! MKMapViewDelegate
-
-            let pointAno = MKPointAnnotation()
-            pointAno.title = "title"
-            pointAno.subtitle = "sub"
-            pointAno.coordinate = CLLocationCoordinate2D(latitude: 37.802654, longitude: -122.408827)
-            mapView.addAnnotation(pointAno)
-            //
+            getAnnotations()
             checkLocationServices()
         }
     
-        
         func setupLocationManager() {
             locationManager.delegate = self as CLLocationManagerDelegate
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -97,7 +88,17 @@ class MapPageViewController: UIViewController,CLLocationManagerDelegate {
     }
     
     func getAnnotations(){
-        //TODO: complete when DB is ready
+        Model.instance.getAllRestaurants { (_data:[Restaurant]?) in
+        if (_data != nil) {
+            for restaurant in _data! {
+                let restAnnotaition = MKPointAnnotation()
+                restAnnotaition.title = restaurant.name
+                restAnnotaition.subtitle = restaurant.address
+                restAnnotaition.coordinate = CLLocationCoordinate2D(latitude: restaurant.geoPoint!.latitude, longitude: restaurant.geoPoint!.longitude)
+                self.mapView.addAnnotation(restAnnotaition)
+            }
+        };
+    }
     }
     
     @IBAction func toMap(segue:UIStoryboardSegue){}
