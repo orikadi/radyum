@@ -11,6 +11,7 @@ import Firebase
 
 class SignUpViewController: UIViewController {
     
+    @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var emailText: UITextField!
     @IBOutlet weak var userText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
@@ -94,6 +95,11 @@ class SignUpViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func backFromSignup(_ sender: Any) {
+        performSegue(withIdentifier: "toLogin", sender: self)
+    }
+    
     //
     //    func isValidEmail(emailID:String)->Bool{
     //        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Z0-9a-z.-]+\\.[A-Za-z]{2,}"

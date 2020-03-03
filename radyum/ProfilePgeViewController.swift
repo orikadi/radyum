@@ -45,13 +45,7 @@ class ProfilePgeViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    @IBAction func check(_ sender: Any) {
-        performSegue(withIdentifier: "check", sender: self)
-    }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc:RestaurantProfilePageViewController = segue.destination as! RestaurantProfilePageViewController
-        vc.backTo = "restaurants"
-    }
+    
     
 }
