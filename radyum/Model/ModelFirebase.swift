@@ -68,6 +68,7 @@ class ModelFirebase{
          };
      }
     
+    
     //add a restaurant to firebase
 //    func addRestaurant(email:String, name: String) {
 //        let db = Firestore.firestore()

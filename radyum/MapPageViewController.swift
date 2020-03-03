@@ -11,12 +11,16 @@ import MapKit
 import CoreLocation
 
 class MapPageViewController: UIViewController,CLLocationManagerDelegate {
+    
+    class RadyumMKPointAnnotation : MKPointAnnotation {
+        var restaurant:Restaurant?
+    }
 
     @IBOutlet weak var mapView: MKMapView!
     
     
     let locationManager = CLLocationManager()
-        let regionInMeters: Double = 1000
+    let regionInMeters: Double = 1000
         
         override func viewDidLoad() {
             super.viewDidLoad()
@@ -91,7 +95,8 @@ class MapPageViewController: UIViewController,CLLocationManagerDelegate {
         Model.instance.getAllRestaurants { (_data:[Restaurant]?) in
         if (_data != nil) {
             for restaurant in _data! {
-                let restAnnotaition = MKPointAnnotation()
+                let restAnnotaition = RadyumMKPointAnnotation()
+                restAnnotaition.restaurant = restaurant
                 restAnnotaition.title = restaurant.name
                 restAnnotaition.subtitle = restaurant.address
                 restAnnotaition.coordinate = CLLocationCoordinate2D(latitude: restaurant.geoPoint!.latitude, longitude: restaurant.geoPoint!.longitude)
@@ -105,6 +110,7 @@ class MapPageViewController: UIViewController,CLLocationManagerDelegate {
 }
 //
 extension MapPageViewController: MKMapViewDelegate{
+    
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         var annotView = mapView.dequeueReusableAnnotationView(withIdentifier: "AnnotationView")
@@ -121,12 +127,14 @@ extension MapPageViewController: MKMapViewDelegate{
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         if(control == view.rightCalloutAccessoryView){
-            performSegue(withIdentifier: "a", sender: nil)
+            performSegue(withIdentifier: "fromMapToRestaurantProfile", sender: view.annotation)
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc:RestaurantProfilePageViewController = segue.destination as! RestaurantProfilePageViewController
+        let send:RadyumMKPointAnnotation = (sender as! RadyumMKPointAnnotation)
+        vc.restaurant = send.restaurant
         vc.backTo = "map"
     }
     
