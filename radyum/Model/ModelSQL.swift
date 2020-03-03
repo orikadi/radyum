@@ -15,7 +15,7 @@ class ModelSQL{
     var database: OpaquePointer? = nil
     
     private init() {
-        let dbFileName = "database2.db"
+        let dbFileName = "database4.db"
         if let dir = FileManager.default.urls(for: .documentDirectory, in:
             .userDomainMask).first{
             let path = dir.appendingPathComponent(dbFileName)
@@ -50,7 +50,7 @@ class ModelSQL{
             sqlite3_bind_text(sqlite3_stmt, 1, name,-1,nil);
             sqlite3_bind_int64(sqlite3_stmt, 2, lastUpdated);
             if(sqlite3_step(sqlite3_stmt) == SQLITE_DONE){
-                print("set last restaurant update row successfully")
+                print("set last restaurants update successfully")
             }
         }
         sqlite3_finalize(sqlite3_stmt)

@@ -60,7 +60,6 @@ class ModelFirebase{
                          print("\(tsDouble)");
 
                      }
-                    //TODO:FIX
                     print(document.data())
                     data.append(Restaurant(json: document.data()));
                  }
