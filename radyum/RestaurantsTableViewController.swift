@@ -102,5 +102,14 @@ class RestaurantsTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    @IBAction func toRestaurants(segue:UIStoryboardSegue){}
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc:RestaurantProfilePageViewController = segue.destination as! RestaurantProfilePageViewController
+        vc.backTo = "restaurants"
+    }
+//TODO: add segue to restaurant profile page from the cells...
 
 }

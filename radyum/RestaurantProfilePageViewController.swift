@@ -14,7 +14,9 @@ class RestaurantProfilePageViewController: UIViewController {
     @IBOutlet weak var addressTitle: UILabel!
     @IBOutlet weak var numOfReviewsTitle: UILabel!
     @IBOutlet weak var Image: UIImageView!
-    @IBOutlet weak var backButton: UIButton! //TODO: check if back button with navBar or if you can pop a view without a navBar!!
+    @IBOutlet weak var backButton: UIButton!
+    var backTo:String = "a"
+    //TODO: check if back button with navBar or if you can pop a view without a navBar!!
     
     
     override func viewDidLoad() {
@@ -23,7 +25,15 @@ class RestaurantProfilePageViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func backAction(_ sender: Any) {
+        if(backTo == "map"){
+            performSegue(withIdentifier: "backToMap", sender: self)
+        }
+        if(backTo == "restaurants"){
+            performSegue(withIdentifier: "backToRestaurants", sender: self)
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

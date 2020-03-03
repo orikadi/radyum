@@ -225,7 +225,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
-                                    <segue destination="3hn-8T-dAZ" kind="unwind" unwindAction="toMapWithSegue:" id="knE-Cb-3DY"/>
+                                    <action selector="backAction:" destination="UVe-fr-dM8" eventType="touchUpInside" id="Y78-bb-uHH"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -238,6 +238,8 @@
                         <outlet property="addressTitle" destination="2Rg-IQ-HZa" id="3En-WP-7lm"/>
                         <outlet property="backButton" destination="tB0-TK-dpT" id="lm2-ge-j5x"/>
                         <outlet property="nameTitle" destination="uuw-qc-LbA" id="cHb-XW-PCX"/>
+                        <segue destination="3hn-8T-dAZ" kind="unwind" identifier="backToMap" unwindAction="toMapWithSegue:" id="txs-0i-nSn"/>
+                        <segue destination="3hn-8T-dAZ" kind="unwind" identifier="backToRestaurants" unwindAction="toRestaurantsWithSegue:" id="o07-Wb-W1Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e2S-YC-TKx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

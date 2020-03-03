@@ -124,6 +124,11 @@ extension MapPageViewController: MKMapViewDelegate{
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc:RestaurantProfilePageViewController = segue.destination as! RestaurantProfilePageViewController
+        vc.backTo = "map"
+    }
+    
 }
 //
 
