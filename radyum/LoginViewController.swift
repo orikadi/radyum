@@ -22,6 +22,15 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        emailText.attributedPlaceholder =
+        NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        
+        passwordText.attributedPlaceholder =
+        NSAttributedString(string: "Password", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        
+        loginButton.applyDesign()
+        signUpButton.applyDesign()
+
         // Do any additional setup after loading the view.
     }
     
@@ -95,5 +104,19 @@ class LoginViewController: UIViewController {
         }
     }
     
+    
 
+}
+
+extension UIButton {
+    func  applyDesign(){
+        self.backgroundColor = UIColor.darkGray.withAlphaComponent(0.35);
+        self.layer.cornerRadius = 7
+        self.setTitleColor(UIColor.white, for: .normal)
+        self.layer.shadowColor = UIColor.darkGray.cgColor
+        self.layer.shadowRadius = 4
+        self.layer.shadowOpacity = 0.5
+        self.layer.shadowOffset = CGSize(width: 0, height: 0)
+    
+    }
 }
