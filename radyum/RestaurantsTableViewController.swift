@@ -10,8 +10,12 @@ import UIKit
 
 class RestaurantsTableViewController: UITableViewController {
 
+    //TODO: updating firebase info doesnt change local content
+    
     @IBOutlet var searchBar: UITableView!
-     var data = [Restaurant]()
+    var data = [Restaurant]()
+    var selected:Restaurant?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,7 +63,10 @@ class RestaurantsTableViewController: UITableViewController {
         }
         return cell
     }
-
+    
+    
+    
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -105,13 +112,23 @@ class RestaurantsTableViewController: UITableViewController {
     }
     */
     
-    
+        
+        
+        
+        override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            selected = data[indexPath.row]
+            performSegue(withIdentifier: "fromRestaurantTableToRestaurantProfile", sender: self)
+        }
+        
+    //return from unwind
     @IBAction func toRestaurants(segue:UIStoryboardSegue){}
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc:RestaurantProfilePageViewController = segue.destination as! RestaurantProfilePageViewController
-        vc.backTo = "restaurants"
+        if (segue.identifier == "fromRestaurantTableToRestaurantProfile") {
+            let vc:RestaurantProfilePageViewController = segue.destination as! RestaurantProfilePageViewController
+            vc.restaurant = selected
+            vc.backTo = "restaurants"
+        }
     }
-//TODO: add segue to restaurant profile page from the cells...
 
 }

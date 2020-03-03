@@ -120,7 +120,7 @@ extension MapPageViewController: MKMapViewDelegate{
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         if(control == view.rightCalloutAccessoryView){
-            performSegue(withIdentifier: "a", sender: nil)
+            performSegue(withIdentifier: "fromMapToRestaurantProfile", sender: nil)
         }
     }
     

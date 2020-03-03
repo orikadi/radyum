@@ -9,10 +9,9 @@
 import UIKit
 
 class RestaurantProfilePageViewController: UIViewController {
-
+    var restaurant:Restaurant?
     @IBOutlet weak var nameTitle: UILabel!
     @IBOutlet weak var addressTitle: UILabel!
-    @IBOutlet weak var numOfReviewsTitle: UILabel!
     @IBOutlet weak var Image: UIImageView!
     @IBOutlet weak var backButton: UIButton!
     var backTo:String = "a"
@@ -21,7 +20,11 @@ class RestaurantProfilePageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        nameTitle.text = restaurant!.name
+        addressTitle.text = restaurant!.address
+        if restaurant!.picture != ""{
+            Image.kf.setImage(with: URL(string: restaurant!.picture));
+          }
         // Do any additional setup after loading the view.
     }
     

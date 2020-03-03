@@ -12,6 +12,7 @@ import Kingfisher
 
 class ProfilePgeViewController: UIViewController {
     var user:User?
+    //TODO: add spinner to review table in user profile
     @IBOutlet weak var userNameTitle: UILabel!
 //    @IBOutlet weak var numOfReviewsTitle: UILabel!
     @IBOutlet weak var picture: UIImageView!
