@@ -96,9 +96,10 @@ class SignUpViewController: UIViewController {
         }
     }
     
-    @IBAction func backFromSignup(_ sender: Any) {
-        performSegue(withIdentifier: "toLogin", sender: self)
+    @IBAction func BackToLogin(_ sender: Any) {
+        self.performSegue(withIdentifier: "toLogin", sender: self)
     }
+    
     
     //
     //    func isValidEmail(emailID:String)->Bool{
