@@ -9,11 +9,13 @@
 
 import Foundation
 import SQLite
+import Firebase
 extension Restaurant{
     
     static func create_table(database: OpaquePointer?){
+        print("creating restaurants table")
         var errormsg: UnsafeMutablePointer<Int8>? = nil
-        let res = sqlite3_exec(database, "CREATE TABLE IF NOT EXISTS RESTAURANTS (RES_ID TEXT PRIMARY KEY, NAME TEXT, ADDRESS TEXT,PICTURE TEXT)", nil, nil, &errormsg);
+        let res = sqlite3_exec(database, "CREATE TABLE IF NOT EXISTS RESTAURANTS (RES_ID TEXT PRIMARY KEY, NAME TEXT, ADDRESS TEXT, GEOPOINT TEXT, PICTURE TEXT)", nil, nil, &errormsg);
         if(res != 0){
             print("error creating table");
             return
@@ -22,16 +24,19 @@ extension Restaurant{
     
     func addToDb(){
         var sqlite3_stmt: OpaquePointer? = nil
-        if (sqlite3_prepare_v2(ModelSQL.instance.database,"INSERT OR REPLACE INTO RESTAURANTS(RES_ID, NAME, ADDRESS, PICTURE) VALUES (?,?,?,?);",-1, &sqlite3_stmt,nil) == SQLITE_OK){
+        if (sqlite3_prepare_v2(ModelSQL.instance.database,"INSERT OR REPLACE INTO RESTAURANTS(RES_ID, NAME, ADDRESS, GEOPOINT, PICTURE) VALUES (?,?,?,?,?);",-1, &sqlite3_stmt,nil) == SQLITE_OK){
             let id = self.id.cString(using: .utf8)
             let name = self.name.cString(using: .utf8)
             let address = self.address.cString(using: .utf8)
-            let picture = self.picture!.cString(using: .utf8)
-            //changed from 1,2,3,4 to 0,1,2,3
-            sqlite3_bind_text(sqlite3_stmt, 0, id,-1,nil)
-            sqlite3_bind_text(sqlite3_stmt, 1, name,-1,nil)
-            sqlite3_bind_text(sqlite3_stmt, 2, address,-1,nil)
-            sqlite3_bind_text(sqlite3_stmt, 3, picture,-1,nil)
+//            let geoPoint = self.geoPoint.cString(using: .utf8)
+            let geoPoint = "(\(self.geoPoint!.latitude),\(self.geoPoint!.longitude))".cString(using: .utf8)
+            let picture = self.picture.cString(using: .utf8)
+            sqlite3_bind_text(sqlite3_stmt, 1, id,-1,nil)
+            sqlite3_bind_text(sqlite3_stmt, 2, name,-1,nil)
+            sqlite3_bind_text(sqlite3_stmt, 3, address,-1,nil)
+            sqlite3_bind_text(sqlite3_stmt, 4, geoPoint,-1,nil)
+            sqlite3_bind_text(sqlite3_stmt, 5, picture,-1,nil)
+
             if(sqlite3_step(sqlite3_stmt) == SQLITE_DONE){
                 print("new restaurant row added successfully")
             }
@@ -47,9 +52,16 @@ extension Restaurant{
             == SQLITE_OK){
             while(sqlite3_step(sqlite3_stmt) == SQLITE_ROW){
                 let resId = String(cString:sqlite3_column_text(sqlite3_stmt,0)!)
-                //TODO: change to fit - Needs address from sql
-                let res = Restaurant(id: resId,name: String(cString:sqlite3_column_text(sqlite3_stmt,1)!), address: String(cString:sqlite3_column_text(sqlite3_stmt,2)!));
-                res.picture = String(cString:sqlite3_column_text(sqlite3_stmt,3)!)
+                let resName = String(cString:sqlite3_column_text(sqlite3_stmt,1)!)
+                let resAddress = String(cString:sqlite3_column_text(sqlite3_stmt,2)!)
+                let res = Restaurant(id: resId,name: resName, address: resAddress)
+             //   res.geoPoint = String(cString:sqlite3_column_text(sqlite3_stmt,3)!)
+                //check if works
+                let gpString = String(cString:sqlite3_column_text(sqlite3_stmt,3)!)
+                let separatorSet = CharacterSet(charactersIn: ",()")
+                let comps = gpString.components(separatedBy: separatorSet)
+                res.geoPoint = GeoPoint(latitude:Double(comps[1])! ,longitude:Double(comps[2])!)
+                res.picture = String(cString:sqlite3_column_text(sqlite3_stmt,4)!)
                 data.append(res)
             }
         }

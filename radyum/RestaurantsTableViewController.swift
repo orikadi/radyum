@@ -44,19 +44,21 @@ class RestaurantsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return data.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantCell", for: indexPath)
-
-        // TODO: Configure the cell...
-
+        let cell:RestaurantTableViewCell = tableView.dequeueReusableCell(withIdentifier: "RestaurantCell", for: indexPath) as! RestaurantTableViewCell
+        let res = data[indexPath.row]
+        cell.restaurantName.text = res.name
+        cell.restaurantAddress.text = res.address
+        cell.restaurantImage.image = UIImage(named: "picture")
+        if res.picture != "" {
+            cell.restaurantImage.kf.setImage(with: URL(string: res.picture))
+        }
         return cell
     }
-    
 
     /*
     // Override to support conditional editing of the table view.

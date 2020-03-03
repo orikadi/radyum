@@ -19,7 +19,6 @@ class ProfilePgeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        //TODO: add tabbarcontroller and add a prepare function for profile segue, so you can populate the user var before entering the profile
         
         //let user = ModelFirebase.instance.getCurrentUser()
         user = Model.currentUser
