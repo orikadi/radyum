@@ -7,13 +7,15 @@
 //
 
 import Foundation
+import Firebase
 
 class Restaurant{
     let id:String
     var name:String	
-    var address:String
-    var picture:String?
-    var lastUpdate: Int64?
+    var address:String = "" //changed
+    var geoPoint:GeoPoint? //added
+    var picture:String = "" //changed
+    var lastUpdate: Int64? //change to Timestamp type?
     
     init(id:String, name:String, address:String){
         self.id = id
