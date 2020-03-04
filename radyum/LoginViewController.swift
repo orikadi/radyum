@@ -92,7 +92,6 @@ class LoginViewController: UIViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
         if (segue.identifier == "fromLoginToTabBar") {
-            print("prepare func in loginviewcontroller")
             Model.currentUser = Model.modelFirebaseInstance.getCurrentUser()
         }
     }

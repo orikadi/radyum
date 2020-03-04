@@ -30,6 +30,9 @@
 		3D03AA5123D722A4001D08DC /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D03AA5023D722A4001D08DC /* Review.swift */; };
 		3D5E857C23D751C000092A01 /* Firebase+User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5E857B23D751C000092A01 /* Firebase+User.swift */; };
 		3D87BBE4240BF7A90037AF4F /* Firebase+Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D87BBE3240BF7A90037AF4F /* Firebase+Restaurant.swift */; };
+		3DCCD816240FECDD00DF5301 /* Firebase+Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCCD815240FECDC00DF5301 /* Firebase+Review.swift */; };
+		3DCCD818240FF15A00DF5301 /* ReviewSql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCCD817240FF15A00DF5301 /* ReviewSql.swift */; };
+		3DCCD81A240FF8C600DF5301 /* AddReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCCD819240FF8C600DF5301 /* AddReviewViewController.swift */; };
 		3DD72FCE23FACA7E004724B5 /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD72FCD23FACA7E004724B5 /* SpinnerViewController.swift */; };
 		3DD72FD023FAD599004724B5 /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD72FCF23FAD599004724B5 /* RestaurantTableViewCell.swift */; };
 		3DD72FD223FADDC1004724B5 /* RestaurantsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD72FD123FADDC1004724B5 /* RestaurantsTableViewController.swift */; };
@@ -87,6 +90,9 @@
 		3D03AA5023D722A4001D08DC /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		3D5E857B23D751C000092A01 /* Firebase+User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firebase+User.swift"; sourceTree = "<group>"; };
 		3D87BBE3240BF7A90037AF4F /* Firebase+Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firebase+Restaurant.swift"; sourceTree = "<group>"; };
+		3DCCD815240FECDC00DF5301 /* Firebase+Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Firebase+Review.swift"; path = "/Users/studio/radyum3/radyum/Firebase+Review.swift"; sourceTree = "<absolute>"; };
+		3DCCD817240FF15A00DF5301 /* ReviewSql.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewSql.swift; sourceTree = "<group>"; };
+		3DCCD819240FF8C600DF5301 /* AddReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewViewController.swift; sourceTree = "<group>"; };
 		3DD72FCD23FACA7E004724B5 /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
 		3DD72FCF23FAD599004724B5 /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
 		3DD72FD123FADDC1004724B5 /* RestaurantsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsTableViewController.swift; sourceTree = "<group>"; usesTabs = 0; };
@@ -169,6 +175,7 @@
 				3DD72FCD23FACA7E004724B5 /* SpinnerViewController.swift */,
 				3DD72FCF23FAD599004724B5 /* RestaurantTableViewCell.swift */,
 				3DD72FD123FADDC1004724B5 /* RestaurantsTableViewController.swift */,
+				3DCCD819240FF8C600DF5301 /* AddReviewViewController.swift */,
 			);
 			path = radyum;
 			sourceTree = "<group>";
@@ -203,6 +210,8 @@
 				3D5E857B23D751C000092A01 /* Firebase+User.swift */,
 				3D01ADCF23FD76410038C3D5 /* RestaurantSql.swift */,
 				3D87BBE3240BF7A90037AF4F /* Firebase+Restaurant.swift */,
+				3DCCD815240FECDC00DF5301 /* Firebase+Review.swift */,
+				3DCCD817240FF15A00DF5301 /* ReviewSql.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -474,6 +483,7 @@
 				3D03AA3423D6E2F1001D08DC /* LoginViewController.swift in Sources */,
 				3DD72FD223FADDC1004724B5 /* RestaurantsTableViewController.swift in Sources */,
 				3D03AA4323D6E87A001D08DC /* User.swift in Sources */,
+				3DCCD816240FECDD00DF5301 /* Firebase+Review.swift in Sources */,
 				3D03AA3823D6E619001D08DC /* MapPageViewController.swift in Sources */,
 				3D87BBE4240BF7A90037AF4F /* Firebase+Restaurant.swift in Sources */,
 				3D03AA4023D6E826001D08DC /* FeedPageTableViewController.swift in Sources */,
@@ -481,10 +491,12 @@
 				3DD72FCE23FACA7E004724B5 /* SpinnerViewController.swift in Sources */,
 				3D03AA4B23D706BC001D08DC /* Model.swift in Sources */,
 				3D5E857C23D751C000092A01 /* Firebase+User.swift in Sources */,
+				3DCCD818240FF15A00DF5301 /* ReviewSql.swift in Sources */,
 				3D03AA5123D722A4001D08DC /* Review.swift in Sources */,
 				3D03AA0423D6E0A8001D08DC /* AppDelegate.swift in Sources */,
 				3D03AA3E23D6E74F001D08DC /* ProfilePgeViewController.swift in Sources */,
 				3D03AA0623D6E0A8001D08DC /* SceneDelegate.swift in Sources */,
+				3DCCD81A240FF8C600DF5301 /* AddReviewViewController.swift in Sources */,
 				3D03AA4723D6ED57001D08DC /* RestaurantProfilePageViewController.swift in Sources */,
 				3D01ADD023FD76410038C3D5 /* RestaurantSql.swift in Sources */,
 				3D03AA4F23D7227A001D08DC /* ModelFirebase.swift in Sources */,
