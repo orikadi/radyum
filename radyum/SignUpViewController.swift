@@ -20,6 +20,18 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        emailText.attributedPlaceholder =
+        NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+               
+        passwordText.attributedPlaceholder =
+        NSAttributedString(string: "Password", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+        
+        userText.attributedPlaceholder =
+        NSAttributedString(string: "Username", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
+               
+        signUpButton.applyDesign()
+        backButton.applyDesign()
+        
         // Do any additional setup after loading the view.
     }
     
