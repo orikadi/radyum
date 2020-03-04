@@ -10,7 +10,7 @@ import Foundation
 import Firebase
 
 class Restaurant{
-    let id:String
+    let id:String //change to document id?
     var name:String	
     var address:String = "" //changed
     var geoPoint:GeoPoint? //added

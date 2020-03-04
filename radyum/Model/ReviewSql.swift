@@ -21,61 +21,62 @@ extension Review{
             return
         }
     }
-//
-//    func addToDb(){
-//        var sqlite3_stmt: OpaquePointer? = nil
-//        if (sqlite3_prepare_v2(ModelSQL.instance.database,"INSERT OR REPLACE INTO REVIEWS(REV_ID, USER_NAME, RESTAURANT_NAME, REVIEW_TEXT, PICTURE) VALUES (?,?,?,?,?);",-1, &sqlite3_stmt,nil) == SQLITE_OK){
-//            let id = self.id.cString(using: .utf8)
-//
-//            let user = self.user.cString(using: .utf8)
-//            let address = self.address.cString(using: .utf8)
-////            let geoPoint = self.geoPoint.cString(using: .utf8)
-//            let geoPoint = "(\(self.geoPoint!.latitude),\(self.geoPoint!.longitude))".cString(using: .utf8)
-//            let picture = self.picture.cString(using: .utf8)
-//            sqlite3_bind_text(sqlite3_stmt, 1, id,-1,nil)
-//            sqlite3_bind_text(sqlite3_stmt, 2, name,-1,nil)
-//            sqlite3_bind_text(sqlite3_stmt, 3, address,-1,nil)
-//            sqlite3_bind_text(sqlite3_stmt, 4, geoPoint,-1,nil)
-//            sqlite3_bind_text(sqlite3_stmt, 5, picture,-1,nil)
-//
-//            if(sqlite3_step(sqlite3_stmt) == SQLITE_DONE){
-//                print("new restaurant row added successfully")
-//            }
-//        }
-//        sqlite3_finalize(sqlite3_stmt)
-//    }
-//
-//    static func getAllRestaurantsFromDb()->[Restaurant]{
-//        var sqlite3_stmt: OpaquePointer? = nil
-//        var data = [Restaurant]()
-//
-//        if (sqlite3_prepare_v2(ModelSQL.instance.database,"SELECT * from RESTAURANTS;",-1,&sqlite3_stmt,nil)
-//            == SQLITE_OK){
-//            while(sqlite3_step(sqlite3_stmt) == SQLITE_ROW){
-//                let resId = String(cString:sqlite3_column_text(sqlite3_stmt,0)!)
-//                let resName = String(cString:sqlite3_column_text(sqlite3_stmt,1)!)
-//                let resAddress = String(cString:sqlite3_column_text(sqlite3_stmt,2)!)
-//                let res = Restaurant(id: resId,name: resName, address: resAddress)
-//             //   res.geoPoint = String(cString:sqlite3_column_text(sqlite3_stmt,3)!)
-//                //check if works
+
+    func addToDb(){
+        var sqlite3_stmt: OpaquePointer? = nil
+        if (sqlite3_prepare_v2(ModelSQL.instance.database,"INSERT OR REPLACE INTO REVIEWS(REV_ID, USER_NAME, RESTAURANT_NAME, REVIEW_TEXT, PICTURE) VALUES (?,?,?,?,?);",-1, &sqlite3_stmt,nil) == SQLITE_OK){
+            let id = self.id.cString(using: .utf8)
+         //   let userId = self.user..cString(using: .utf8)
+                //let resName = self.restaurant.name.cString(using: .utf8)
+            let revText = self.text.cString(using: .utf8)
+            let picture = self.picture.cString(using: .utf8)
+            sqlite3_bind_text(sqlite3_stmt, 1, id,-1,nil)
+         //   sqlite3_bind_text(sqlite3_stmt, 2, userName,-1,nil)
+        //    sqlite3_bind_text(sqlite3_stmt, 3, resName,-1,nil)
+            sqlite3_bind_text(sqlite3_stmt, 4, revText,-1,nil)
+            sqlite3_bind_text(sqlite3_stmt, 5, picture,-1,nil)
+            if(sqlite3_step(sqlite3_stmt) == SQLITE_DONE){
+                print("new review row added successfully")
+            }
+        }
+        sqlite3_finalize(sqlite3_stmt)
+    }
+
+    static func getAllReviewsFromDb()->[Review]{
+        var sqlite3_stmt: OpaquePointer? = nil
+        var data = [Review]()
+        
+        if (sqlite3_prepare_v2(ModelSQL.instance.database,"SELECT * from REVIEWS;",-1,&sqlite3_stmt,nil)
+            == SQLITE_OK){
+            while(sqlite3_step(sqlite3_stmt) == SQLITE_ROW){
+                let revId = String(cString:sqlite3_column_text(sqlite3_stmt,0)!)
+                let userName = String(cString:sqlite3_column_text(sqlite3_stmt,1)!)
+                let resName = String(cString:sqlite3_column_text(sqlite3_stmt,2)!)
+                let text = String(cString:sqlite3_column_text(sqlite3_stmt,3)!)
+                //add get user and get restaurant?
+                //or instead of userId use user email since its basically the same thing, make a get function that gets user from 
+                
+               // let review = Review(id: revId, name: userName, restaurant: re: resAddress)
+             //   res.geoPoint = String(cString:sqlite3_column_text(sqlite3_stmt,3)!)
+                //check if works
 //                let gpString = String(cString:sqlite3_column_text(sqlite3_stmt,3)!)
 //                let separatorSet = CharacterSet(charactersIn: ",()")
 //                let comps = gpString.components(separatedBy: separatorSet)
-//                res.geoPoint = GeoPoint(latitude:Double(comps[1])! ,longitude:Double(comps[2])!)
+//                res.geoPoint = GeoPoint(latitu  de:Double(comps[1])! ,longitude:Double(comps[2])!)
 //                res.picture = String(cString:sqlite3_column_text(sqlite3_stmt,4)!)
-//                data.append(res)
-//            }
-//        }
-//        sqlite3_finalize(sqlite3_stmt)
-//        return data
-//    }
-//
-//    static func setLastUpdate(lastUpdated:Int64){
-//        return ModelSQL.instance.setLastUpdate(name: "RESTAURANTS", lastUpdated: lastUpdated);
-//    }
-//
-//    static func getLastUpdateDate()->Int64{
-//        return ModelSQL.instance.getLastUpdateDate(name: "RESTAURANTS")
-//    }
+            //  data.append(review)
+            }
+        }
+        sqlite3_finalize(sqlite3_stmt)
+        return data
+    }
+
+    static func setLastUpdate(lastUpdated:Int64){
+        return ModelSQL.instance.setLastUpdate(name: "RESTAURANTS", lastUpdated: lastUpdated);
+    }
+
+    static func getLastUpdateDate()->Int64{
+        return ModelSQL.instance.getLastUpdateDate(name: "RESTAURANTS")
+    }
 
 }
