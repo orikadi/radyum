@@ -88,6 +88,10 @@ class ModelFirebase{
     
     func editUserPicUrl(url:String){
         let db = Firestore.firestore()
+        if(Model.currentUser?.avatar != nil){
+        let storageRef = Storage.storage().reference(forURL:
+            "gs://radyum-4db50.appspot.com").child(Model.currentUser!.avatar!).delete(completion: nil)
+        }
         db.collection("users").document(Auth.auth().currentUser!.uid).updateData(["avatar":url])
     }
     

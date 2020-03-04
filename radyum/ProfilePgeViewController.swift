@@ -10,6 +10,8 @@ import UIKit
 import Firebase
 import Kingfisher
 
+//TODO: if imidiatly after logingin you move to profile page then no user information is displayed
+
 class ProfilePgeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     var user:User?
     //TODO: add spinner to review table in user profile
