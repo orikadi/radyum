@@ -14,7 +14,9 @@ class RestaurantProfilePageViewController: UIViewController {
     @IBOutlet weak var addressTitle: UILabel!
     @IBOutlet weak var Image: UIImageView!
     @IBOutlet weak var backButton: UIButton!
-    var backTo:String = "a"
+    @IBOutlet weak var addReviewButton: UIButton!
+    
+    var backTo:String?
     //TODO: check if back button with navBar or if you can pop a view without a navBar!!
     
     
@@ -36,7 +38,14 @@ class RestaurantProfilePageViewController: UIViewController {
             performSegue(withIdentifier: "backToRestaurants", sender: self)
         }
     }
+     @IBAction func backToRestaurantProfile(segue:UIStoryboardSegue){}
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toAddReview" {
+            let vc:AddReviewViewController = segue.destination as! AddReviewViewController
+            vc.restaurant = restaurant
+        }
+    }
     /*
     // MARK: - Navigation
 

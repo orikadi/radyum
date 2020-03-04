@@ -16,6 +16,7 @@ class Restaurant{
     var geoPoint:GeoPoint? //added
     var picture:String = "" //changed
     var lastUpdate: Int64? //change to Timestamp type?
+    var reviews:[Review]? //needed?
     
     init(id:String, name:String, address:String){
         self.id = id

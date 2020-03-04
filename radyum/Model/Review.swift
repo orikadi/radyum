@@ -9,13 +9,18 @@
 import Foundation
 
 class Review{
-    //var id:String
+    //id needed?
+    let id:String //document id?
     var user:User
+    var restaurant:Restaurant
     var text:String?
-    var picture:String? //uimage?
+    var picture:String?
+    var lastUpdate: Int64?
     
-    init (user:User, text:String?, picture: String?){
+    init (id:String, user:User, restaurant:Restaurant, text:String?, picture: String?){
+        self.id = id
         self.user = user
+        self.restaurant = restaurant
         self.text = text
         self.picture = picture
     }

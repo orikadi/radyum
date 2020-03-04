@@ -12,7 +12,7 @@ class User{
     var email:String
     var name:String
     var avatar:String? //TODO: better to use type UIImage?
-    var reviews:[Review]?
+    var reviews:[Review]? //needed?
     
     init(email:String) {
         self.email = email
