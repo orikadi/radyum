@@ -318,12 +318,21 @@
                                 <rect key="frame" x="16" y="59" width="142" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U9t-c4-4g4">
+                                <rect key="frame" x="176" y="86" width="126" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="edit profile picture"/>
+                                <connections>
+                                    <action selector="editPicture:" destination="dco-6V-H73" eventType="touchUpInside" id="UUe-6F-eiD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Iq2-ir-DIh"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" selectedImage="person" id="9Vc-rC-wRJ"/>
                     <connections>
+                        <outlet property="editPictureButton" destination="U9t-c4-4g4" id="0xd-V7-D6U"/>
                         <outlet property="picture" destination="pdA-TT-td5" id="egu-kA-vze"/>
                         <outlet property="userNameTitle" destination="nxB-Sz-fnH" id="YOo-oq-Tia"/>
                     </connections>

@@ -68,6 +68,29 @@ class ModelFirebase{
          };
      }
     
+    func saveImage(image:UIImage, callback:@escaping (String)->Void){
+        let storageRef = Storage.storage().reference(forURL:
+            "gs://radyum-4db50.appspot.com")
+        let data = image.jpegData(compressionQuality: 0.5)
+        let imageRef = storageRef.child("imageName")
+        let metadata = StorageMetadata()
+        metadata.contentType = "image/jpeg"
+        imageRef.putData(data!, metadata: metadata) { (metadata, error) in
+            imageRef.downloadURL { (url, error) in
+                guard let downloadURL = url else {
+                    return
+                }
+                print("url: \(downloadURL)")
+                callback(downloadURL.absoluteString)
+            }
+        }
+    }
+    
+    func editUserPicUrl(url:String){
+        let db = Firestore.firestore()
+        db.collection("users").document(Auth.auth().currentUser!.uid).updateData(["avatar":url])
+    }
+    
     
     //add a restaurant to firebase
 //    func addRestaurant(email:String, name: String) {
