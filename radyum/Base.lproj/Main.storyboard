@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -82,6 +82,12 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="OJZ-Zo-n4g">
+                                <rect key="frame" x="136" y="387" width="103" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="color" cocoaTouchSystemColor="darkTextColor"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="TSI-Oy-V7l"/>
@@ -92,6 +98,7 @@
                         <outlet property="emailText" destination="fXt-0r-3zZ" id="TKa-Pj-cDB"/>
                         <outlet property="passwordText" destination="VAj-SV-BSL" id="1Gf-5J-7gh"/>
                         <outlet property="signUpButton" destination="eRu-EI-TM5" id="ZHc-oU-wXM"/>
+                        <outlet property="spinner" destination="OJZ-Zo-n4g" id="1dq-Fb-Zsd"/>
                         <outlet property="userText" destination="tH1-Y9-NfL" id="XZ6-KL-6zR"/>
                         <segue destination="CLo-5O-rLH" kind="unwind" identifier="toLogin" unwindAction="toLoginWithSegue:" id="91W-bO-hVT"/>
                     </connections>
@@ -176,6 +183,12 @@
                                 <rect key="frame" x="327" y="30" width="48" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="CS5-aP-rRD">
+                                <rect key="frame" x="138" y="422" width="103" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="color" cocoaTouchSystemColor="darkTextColor"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -186,6 +199,7 @@
                         <outlet property="loginButton" destination="8Eq-ds-iic" id="S2E-rT-baX"/>
                         <outlet property="passwordText" destination="Mx5-40-zym" id="wib-kA-UPK"/>
                         <outlet property="signUpButton" destination="q3h-YS-HAU" id="yDZ-C1-qRN"/>
+                        <outlet property="spinner" destination="CS5-aP-rRD" id="FKc-P9-0Hd"/>
                         <segue destination="kQp-Ij-sUC" kind="show" identifier="fromLoginToTabBar" id="GgG-QF-RPr"/>
                     </connections>
                 </viewController>

@@ -16,10 +16,11 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var userText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
     @IBOutlet weak var signUpButton: UIButton!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        spinner.isHidden = true
         emailText.attributedPlaceholder =
         NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
                
@@ -36,13 +37,7 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction func SignUp(_ sender: Any) {
-        //make spinner
-        let child = SpinnerViewController()
-        addChild(child)
-        child.view.frame = view.frame
-        view.addSubview(child.view)
-        child.didMove(toParent: self)
-        //end of makinf spinner
+        spinner.isHidden = false
         if (userText.text == nil) {
             let alert = UIAlertController(title: "WARNING", message: "Input a name", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title:"CONFIRM", style:UIAlertAction.Style.default, handler: {(action) in
@@ -58,50 +53,30 @@ class SignUpViewController: UIViewController {
                     alert.addAction(UIAlertAction(title:"CONFIRM", style:UIAlertAction.Style.default, handler: {(action) in
                         //alert.dismiss(animated: true, completion: nil)
                     }))
-                    //end spinner
-                    child.willMove(toParent: nil)
-                    child.view.removeFromSuperview()
-                    child.removeFromParent()
-                    //
+                    self.spinner.isHidden = true
                     self.present(alert, animated:true, completion:nil)
                 case AuthErrorCode.accountExistsWithDifferentCredential.rawValue:
                     let alert = UIAlertController(title: "WARNING", message: "Account already exists", preferredStyle: UIAlertController.Style.alert)
                     alert.addAction(UIAlertAction(title:"CONFIRM", style:UIAlertAction.Style.default, handler: {(action) in
                         //alert.dismiss(animated: true, completion: nil)
                     }))
-                    //end spinner
-                    child.willMove(toParent: nil)
-                    child.view.removeFromSuperview()
-                    child.removeFromParent()
-                    //
+                    self.spinner.isHidden = true
                     self.present(alert, animated:true, completion:nil)
                 case AuthErrorCode.emailAlreadyInUse.rawValue:
                     let alert = UIAlertController(title: "WARNING", message: "Account email already exists", preferredStyle: UIAlertController.Style.alert)
                     alert.addAction(UIAlertAction(title:"CONFIRM", style:UIAlertAction.Style.default, handler: {(action) in
                         //alert.dismiss(animated: true, completion: nil)
                     }))
-                    //end spinner
-                    child.willMove(toParent: nil)
-                    child.view.removeFromSuperview()
-                    child.removeFromParent()
-                    //
+                    self.spinner.isHidden = true
                     self.present(alert, animated:true, completion:nil)
                 default:
-                    //end spinner
-                    child.willMove(toParent: nil)
-                    child.view.removeFromSuperview()
-                    child.removeFromParent()
-                    //
+                    self.spinner.isHidden = true
                     print("unknown error: \(err.localizedDescription)")
                 }
             } else {
                 //continue to app
                 Model.modelFirebaseInstance.addUser(email: self.emailText.text!, name: self.userText.text!)
-                //end spinner
-                child.willMove(toParent: nil)
-                child.view.removeFromSuperview()
-                child.removeFromParent()
-                //
+                self.spinner.isHidden = true
                 self.performSegue(withIdentifier: "toLogin", sender: self)
             }
             }
