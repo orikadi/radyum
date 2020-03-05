@@ -1,5 +1,5 @@
 //
-//  Firebase+User.swift
+//  Firebase+Restaurant.swift
 //  radyum
 //
 //  Created by Studio on 01/03/2020.

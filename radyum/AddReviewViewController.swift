@@ -36,26 +36,10 @@ class AddReviewViewController: UIViewController {
             self.present(alert, animated:true, completion:nil)
         }
         else {
-            let db = Firestore.firestore()
-            var ref: DocumentReference? = nil
-            ref = db.collection("reviews").addDocument(data: [
-                "userId": Auth.auth().currentUser?.uid,
-                "restaurantId": restaurant?.id,
-                "userName": Model.currentUser?.name,
-                "restaurantName": restaurant?.name,
-                "text":reviewText.text,
-                "picture":"", //TODO: yoav add url
-                "lastUpdate": FieldValue.serverTimestamp()
-            ]) { err in
-                if let err = err {
-                    print("Error adding document: \(err)")
-                } else {
-                    print("Document added with ID\(ref!.documentID)")
-                }
-            }
+            //TODO: yoav add URL to 'picture: "" ' below
+            Model.modelFirebaseInstance.addReview(user: Model.currentUser!, restaurant: restaurant!, text: reviewText.text!, picture: "")
             performSegue(withIdentifier: "backToRestaurantProfile", sender: self)
         }
-       
      }
     
     @IBAction func backToRestaurantPage(_ sender: Any) {

@@ -10,9 +10,8 @@ import Foundation
 import Firebase
 
 class Model{
-    
+    //TODO: ADD LOG OUT BUTTON IN USER PROFILE
     static let instance = Model()
-    //var modelFirebase:ModelFirebase = ModelFirebase()
     static let modelFirebaseInstance:ModelFirebase = ModelFirebase()
     static var currentUser:User?
     
@@ -42,7 +41,7 @@ class Model{
     
     class ModelEvents{
         static let RestaurantDataEvent = EventNotificationBase(eventName: "com.radyum.RestaurantDataEvent")
-        
+        static let ReviewDataEvent = EventNotificationBase(eventName: "com.radyum.ReviewDataEvent")
         private init(){}
     }
     

@@ -12,7 +12,8 @@ class FeedPageTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //TODO: ModelEvent Review observe func like in eliav's code
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
