@@ -72,7 +72,7 @@ class ModelFirebase{
         let storageRef = Storage.storage().reference(forURL:
             "gs://radyum-4db50.appspot.com")
         let data = image.jpegData(compressionQuality: 0.5)
-        let imageRef = storageRef.child(kind)
+        let imageRef = storageRef.child((getCurrentUser()?.email)! + getTime())
         let metadata = StorageMetadata()
         metadata.contentType = "image/jpeg"
         imageRef.putData(data!, metadata: metadata) { (metadata, error) in
@@ -84,6 +84,13 @@ class ModelFirebase{
                 callback(downloadURL.absoluteString)
             }
         }
+    }
+    
+    func getTime()->String{
+        let dateFormatter : DateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let date = Date()
+        return dateFormatter.string(from: date)
     }
     
     func editUserPicUrl(url:String){
@@ -105,7 +112,7 @@ class ModelFirebase{
                     "userName": user.name,
                     "restaurantName": restaurant.name,
                     "text":text,
-                    "picture":"", //added with id after creation
+                    "picture":picture,
                     "lastUpdate": FieldValue.serverTimestamp()
                 ]) { err in
                     if let err = err {

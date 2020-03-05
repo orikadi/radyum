@@ -405,7 +405,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Add Picture"/>
                                 <connections>
-                                    <action selector="addPic:" destination="YiF-nn-GtJ" eventType="touchUpInside" id="Y1R-yn-ubQ"/>
+                                    <action selector="addPicture:" destination="YiF-nn-GtJ" eventType="touchUpInside" id="YwE-Yn-MQP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mPS-ut-tHC">
@@ -417,6 +417,14 @@
                                     <action selector="addReview:" destination="YiF-nn-GtJ" eventType="touchUpInside" id="tEk-qW-dj6"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="fnR-wl-3Er">
+                                <rect key="frame" x="243" y="471" width="51" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="prq-3A-MHX">
+                                <rect key="frame" x="136" y="261" width="101" height="94"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Vqc-XK-wN3"/>
@@ -424,8 +432,10 @@
                     <navigationItem key="navigationItem" id="KnA-fR-36w"/>
                     <connections>
                         <outlet property="backButton" destination="X1A-as-cfy" id="lQj-Wd-Dbn"/>
+                        <outlet property="picSpinner" destination="fnR-wl-3Er" id="U6U-Fn-hr7"/>
                         <outlet property="picture" destination="NsV-IR-4Qf" id="9fs-9o-gL9"/>
                         <outlet property="restaurantName" destination="PDL-EZ-Mje" id="xoW-yu-m3M"/>
+                        <outlet property="returnSpinner" destination="prq-3A-MHX" id="t42-Vd-bGw"/>
                         <outlet property="reviewText" destination="U94-KE-1gu" id="s61-eE-6R6"/>
                         <segue destination="Mh6-AO-avg" kind="unwind" identifier="backToRestaurantProfile" unwindAction="backToRestaurantProfileWithSegue:" id="CZD-EU-mBJ"/>
                     </connections>
@@ -433,7 +443,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ht4-tf-7Jo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="Mh6-AO-avg" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3836" y="326"/>
+            <point key="canvasLocation" x="3836" y="325.18740629685158"/>
         </scene>
         <!--Feed-->
         <scene sceneID="nag-h6-cI0">
