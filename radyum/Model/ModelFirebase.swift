@@ -91,6 +91,30 @@ class ModelFirebase{
         db.collection("users").document(Auth.auth().currentUser!.uid).updateData(["avatar":url])
     }
     
+    //TODO: ADD MODELEVENT FOR REVIEWS WITH POST AND OBSERVE
+    func addReview(user:User, restaurant:Restaurant, text:String, picture:String?) {
+        let db = Firestore.firestore()
+        var ref: DocumentReference? = nil
+                ref = db.collection("reviews").addDocument(data: [
+                    "userEmail": user.email,
+                    "restaurantId": restaurant.id,
+                    "userName": user.name,
+                    "restaurantName": restaurant.name,
+                    "text":text,
+                    "picture":"", //added with id after creation
+                    "lastUpdate": FieldValue.serverTimestamp()
+                ]) { err in
+                    if let err = err {
+                        print("Error adding document: \(err)")
+                    } else {
+                        print("Document added with ID\(ref!.documentID)")
+                    }
+                }
+        //TODO: yoav add picture url in setData if picture is not ""
+        ref?.setData((["id": ref!.documentID]),merge: true)
+        ModelEvents.ReviewDataEvent.post()
+    }
+    
     
     //add a restaurant to firebase
 //    func addRestaurant(email:String, name: String) {

@@ -28,6 +28,7 @@
 		3D03AA4D23D70920001D08DC /* ModelSQL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D03AA4C23D70920001D08DC /* ModelSQL.swift */; };
 		3D03AA4F23D7227A001D08DC /* ModelFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D03AA4E23D7227A001D08DC /* ModelFirebase.swift */; };
 		3D03AA5123D722A4001D08DC /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D03AA5023D722A4001D08DC /* Review.swift */; };
+		3D4B762F2411509800384E5D /* DisplayReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4B762E2411509800384E5D /* DisplayReviewViewController.swift */; };
 		3D5E857C23D751C000092A01 /* Firebase+User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5E857B23D751C000092A01 /* Firebase+User.swift */; };
 		3D87BBE4240BF7A90037AF4F /* Firebase+Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D87BBE3240BF7A90037AF4F /* Firebase+Restaurant.swift */; };
 		3DCCD816240FECDD00DF5301 /* Firebase+Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCCD815240FECDC00DF5301 /* Firebase+Review.swift */; };
@@ -88,6 +89,7 @@
 		3D03AA4C23D70920001D08DC /* ModelSQL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSQL.swift; sourceTree = "<group>"; };
 		3D03AA4E23D7227A001D08DC /* ModelFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFirebase.swift; sourceTree = "<group>"; };
 		3D03AA5023D722A4001D08DC /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		3D4B762E2411509800384E5D /* DisplayReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayReviewViewController.swift; sourceTree = "<group>"; };
 		3D5E857B23D751C000092A01 /* Firebase+User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firebase+User.swift"; sourceTree = "<group>"; };
 		3D87BBE3240BF7A90037AF4F /* Firebase+Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firebase+Restaurant.swift"; sourceTree = "<group>"; };
 		3DCCD815240FECDC00DF5301 /* Firebase+Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Firebase+Review.swift"; path = "/Users/studio/radyum3/radyum/Firebase+Review.swift"; sourceTree = "<absolute>"; };
@@ -176,6 +178,7 @@
 				3DD72FCF23FAD599004724B5 /* RestaurantTableViewCell.swift */,
 				3DD72FD123FADDC1004724B5 /* RestaurantsTableViewController.swift */,
 				3DCCD819240FF8C600DF5301 /* AddReviewViewController.swift */,
+				3D4B762E2411509800384E5D /* DisplayReviewViewController.swift */,
 			);
 			path = radyum;
 			sourceTree = "<group>";
@@ -480,6 +483,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D03AA4523D6EBF2001D08DC /* Restaurant.swift in Sources */,
+				3D4B762F2411509800384E5D /* DisplayReviewViewController.swift in Sources */,
 				3D03AA3423D6E2F1001D08DC /* LoginViewController.swift in Sources */,
 				3DD72FD223FADDC1004724B5 /* RestaurantsTableViewController.swift in Sources */,
 				3D03AA4323D6E87A001D08DC /* User.swift in Sources */,

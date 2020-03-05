@@ -13,7 +13,7 @@ import Firebase
 extension Restaurant{
     
     static func create_table(database: OpaquePointer?){
-        print("creating restaurants table")
+        print("creating restaurants table if it doesnt exist")
         var errormsg: UnsafeMutablePointer<Int8>? = nil
         let res = sqlite3_exec(database, "CREATE TABLE IF NOT EXISTS RESTAURANTS (RES_ID TEXT PRIMARY KEY, NAME TEXT, ADDRESS TEXT, GEOPOINT TEXT, PICTURE TEXT)", nil, nil, &errormsg);
         if(res != 0){
@@ -28,7 +28,6 @@ extension Restaurant{
             let id = self.id.cString(using: .utf8)
             let name = self.name.cString(using: .utf8)
             let address = self.address.cString(using: .utf8)
-//            let geoPoint = self.geoPoint.cString(using: .utf8)
             let geoPoint = "(\(self.geoPoint!.latitude),\(self.geoPoint!.longitude))".cString(using: .utf8)
             let picture = self.picture.cString(using: .utf8)
             sqlite3_bind_text(sqlite3_stmt, 1, id,-1,nil)
@@ -38,7 +37,7 @@ extension Restaurant{
             sqlite3_bind_text(sqlite3_stmt, 5, picture,-1,nil)
 
             if(sqlite3_step(sqlite3_stmt) == SQLITE_DONE){
-                print("new restaurant row added successfully")
+                print("`new restaurant` row added successfully")
             }
         }
         sqlite3_finalize(sqlite3_stmt)
@@ -55,8 +54,6 @@ extension Restaurant{
                 let resName = String(cString:sqlite3_column_text(sqlite3_stmt,1)!)
                 let resAddress = String(cString:sqlite3_column_text(sqlite3_stmt,2)!)
                 let res = Restaurant(id: resId,name: resName, address: resAddress)
-             //   res.geoPoint = String(cString:sqlite3_column_text(sqlite3_stmt,3)!)
-                //check if works
                 let gpString = String(cString:sqlite3_column_text(sqlite3_stmt,3)!)
                 let separatorSet = CharacterSet(charactersIn: ",()")
                 let comps = gpString.components(separatedBy: separatorSet)

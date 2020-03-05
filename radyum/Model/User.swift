@@ -11,7 +11,7 @@ import Foundation
 class User{
     var email:String
     var name:String
-    var avatar:String? //TODO: better to use type UIImage?
+    var avatar:String?
     var reviews:[Review]? //needed?
     
     init(email:String) {
@@ -27,4 +27,5 @@ class User{
         self.reviews = reviews
         self.avatar = avatar
     }
+
 }

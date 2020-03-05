@@ -9,22 +9,25 @@
 import Foundation
 
 class Review{
-    //id needed?
-    let id:String //document id?
+    let id:String? //document id
     //var user:User
     //var restaurant:Restaurant
-    var userId:String
+    var userEmail:String
     var resId:String
     var text:String
     var picture:String = ""
     var lastUpdate: Int64?
     
-    init (id:String, userId:String, resId:String, text:String){
-        self.id = id
-        self.userId = userId
+    init (userEmail:String, resId:String, text:String){
+        id = ""
+        self.userEmail = userEmail
         self.resId = resId
-//        self.user = user
-//        self.restaurant = restaurant
+        self.text = text
+        }
+    init (id:String, userEmail:String, resId:String, text:String){
+        self.id = id
+        self.userEmail = userEmail
+        self.resId = resId
         self.text = text
     }
 }
