@@ -57,9 +57,9 @@ class RestaurantsTableViewController: UITableViewController {
         let res = data[indexPath.row]
         cell.restaurantName.text = res.name
         cell.restaurantAddress.text = res.address
-        cell.restaurantImage.image = UIImage(named: "picture")
+        cell.picture.image = UIImage(named: "picture")
         if res.picture != "" {
-            cell.restaurantImage.kf.setImage(with: URL(string: res.picture))
+            cell.picture.kf.setImage(with: URL(string: res.picture))
         }
         return cell
     }

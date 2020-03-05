@@ -13,6 +13,7 @@ import Kingfisher
 //TODO: if imidiatly after logingin you move to profile page then no user information is displayed
 
 class ProfilePgeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     var user:User?
     //TODO: add spinner to review table in user profile
     @IBOutlet weak var userNameTitle: UILabel!
@@ -22,8 +23,7 @@ class ProfilePgeViewController: UIViewController, UIImagePickerControllerDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
-        
+        spinner.isHidden = true
         //let user = ModelFirebase.instance.getCurrentUser()
         user = Model.currentUser
         userNameTitle.text = user!.name
@@ -39,6 +39,7 @@ class ProfilePgeViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     @IBAction func editPicture(_ sender: Any) {
+        spinner.isHidden = false
         if UIImagePickerController.isSourceTypeAvailable(
             UIImagePickerController.SourceType.photoLibrary) {
             let imagePicker = UIImagePickerController()
@@ -46,7 +47,7 @@ class ProfilePgeViewController: UIViewController, UIImagePickerControllerDelegat
             imagePicker.sourceType =
                 UIImagePickerController.SourceType.photoLibrary;
             imagePicker.allowsEditing = true
-            self.present(imagePicker, animated: true, completion: nil)
+            self.present(imagePicker, animated: true){self.spinner.isHidden = true}
         }
     }
     
@@ -54,7 +55,7 @@ class ProfilePgeViewController: UIViewController, UIImagePickerControllerDelegat
         let newPic = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
         if(newPic != nil && newPic != self.picture.image){
             self.picture.image = newPic
-            Model.modelFirebaseInstance.saveImage(image: self.picture.image!) { (url) in
+            Model.modelFirebaseInstance.saveImage(image: self.picture.image!, kind: "userPicture") { (url) in
                 self.user?.avatar = url
                 Model.modelFirebaseInstance.editUserPicUrl(url: url)
             }
