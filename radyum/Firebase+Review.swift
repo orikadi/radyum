@@ -12,7 +12,7 @@ extension Review{
     convenience init(json:[String:Any]){
         let id = json["id"] as! String
         let userEmail = json["userEmail"] as! String
-        let resId = json["resId"] as! String
+        let resId = json["restaurantId"] as! String
 //        let user = json["user"] as! User
 //        let restaurant = json["restaurant"] as! Restaurant
         let text = json["text"] as! String

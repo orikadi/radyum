@@ -10,13 +10,25 @@ import UIKit
 
 class DisplayReviewViewController: UIViewController {
 
+    @IBOutlet weak var restaurantNameLabel: UILabel!
+    @IBOutlet weak var userNameLabel: UILabel!
+    
+    @IBOutlet weak var reviewTextLabel: UILabel!
+    
+    var user:User?
+    var restaurant:Restaurant?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func backAction(_ sender: Any) {
+        performSegue(withIdentifier: "backToRestaurantReview", sender: self)
+    }
+    
     /*
     // MARK: - Navigation
 
