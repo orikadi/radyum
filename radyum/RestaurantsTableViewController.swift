@@ -10,9 +10,9 @@ import UIKit
 
 class RestaurantsTableViewController: UITableViewController {
 
-    //TODO: updating firebase info doesnt change local content
+    //TODO: updating firebase info doesnt change local content? recheck
     
-    @IBOutlet var searchBar: UITableView!
+    @IBOutlet var searchBar: UITableView! //DELETE
     var data = [Restaurant]()
     var selected:Restaurant?
     

@@ -119,6 +119,28 @@ class ModelFirebase{
         ModelEvents.ReviewDataEvent.post()
     }
     
+    func getAllReviewsByRestaurantID(resId: String ,callback: @escaping ([Review]?)->Void){
+        let db = Firestore.firestore();
+        db.collection("reviews").getDocuments{ (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)");
+                callback(nil);
+            }else{
+                var data = [Review]();
+                for document in querySnapshot!.documents {
+                    data.append(Review(json: document.data()));
+                }
+                var filteredPosts:[Review] = [Review]()
+                for item in data {
+                    if(resId == item.resId){
+                        filteredPosts.append(item)
+                    }
+                }
+                callback(filteredPosts);
+            }
+        }
+    }
+    
     
     
     //add a restaurant to firebase
