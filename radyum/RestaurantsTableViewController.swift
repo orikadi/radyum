@@ -61,6 +61,9 @@ class RestaurantsTableViewController: UITableViewController {
         if res.picture != "" {
             cell.picture.kf.setImage(with: URL(string: res.picture))
         }
+        else{
+            cell.picture.kf.setImage(with: URL(string: "https://firebasestorage.googleapis.com/v0/b/radyum-4db50.appspot.com/o/defaultRestaurantPic.png?alt=media&token=8d76d6c9-1ff4-476e-8818-9cb2bf73d1c4"))
+        }
         return cell
     }
     

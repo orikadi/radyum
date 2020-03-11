@@ -35,7 +35,10 @@ class ProfilePgeViewController: UIViewController, UIImagePickerControllerDelegat
 //            numOfReviewsTitle.text = String(0)
 //        }
         if user!.avatar != ""{
-            picture.kf.setImage(with: URL(string: user!.avatar!));
+            picture.kf.setImage(with: URL(string: user!.avatar!))
+        }
+        else{
+            picture.kf.setImage(with: URL(string: "https://firebasestorage.googleapis.com/v0/b/radyum-4db50.appspot.com/o/defaultUserPic.png?alt=media&token=d4567663-98cd-4f68-a2ef-f5ce570ac3fa"))
         }
     }
     
