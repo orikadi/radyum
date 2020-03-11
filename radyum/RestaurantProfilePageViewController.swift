@@ -47,6 +47,11 @@ class RestaurantProfilePageViewController: UIViewController {
             let vc:AddReviewViewController = segue.destination as! AddReviewViewController
             vc.restaurant = restaurant
         }
+        if segue.identifier == "fromRestaurantToReviews" {
+                 let vc:RestaurantReviewsTableViewController = segue.destination as! RestaurantReviewsTableViewController
+                 vc.restaurant = restaurant
+             }
+        
     }
     /*
     // MARK: - Navigation
