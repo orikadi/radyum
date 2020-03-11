@@ -32,7 +32,6 @@ class AddReviewViewController: UIViewController, UIImagePickerControllerDelegate
     
     //backToRestaurantProfile
     @IBAction func addReview(_ sender: Any) {
-        returnSpinner.isHidden = false
         if reviewText.text == "" {
             let alert = UIAlertController(title: "ALERT", message: "Can't add a review without text", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title:"CONFIRM", style:UIAlertAction.Style.default, handler: {(action) in
@@ -41,6 +40,7 @@ class AddReviewViewController: UIViewController, UIImagePickerControllerDelegate
             self.present(alert, animated:true, completion:nil)
         }
         else {
+            returnSpinner.isHidden = false
             if(picture.image != nil){
                 Model.modelFirebaseInstance.saveImage(image: self.picture.image!, kind: "review") { (url) in
                 self.picUrl = url
