@@ -518,6 +518,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="color" cocoaTouchSystemColor="darkTextColor"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dy3-dM-8Ou">
+                                <rect key="frame" x="255" y="30" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logout:" destination="dco-6V-H73" eventType="touchUpInside" id="GRk-dC-JEg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Iq2-ir-DIh"/>
@@ -525,12 +533,15 @@
                     <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" selectedImage="person" id="9Vc-rC-wRJ"/>
                     <connections>
                         <outlet property="editPictureButton" destination="U9t-c4-4g4" id="0xd-V7-D6U"/>
+                        <outlet property="logoutButton" destination="dy3-dM-8Ou" id="2wK-OJ-RIO"/>
                         <outlet property="picture" destination="pdA-TT-td5" id="egu-kA-vze"/>
                         <outlet property="spinner" destination="Jdt-xM-kak" id="WoA-DP-Z3L"/>
                         <outlet property="userNameTitle" destination="nxB-Sz-fnH" id="YOo-oq-Tia"/>
+                        <segue destination="1Xe-cV-MSM" kind="unwind" identifier="logoutSegue" unwindAction="toLoginWithSegue:" id="9hg-fQ-cqU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CVh-VA-rL0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="1Xe-cV-MSM" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1900" y="1943.4782608695655"/>
         </scene>

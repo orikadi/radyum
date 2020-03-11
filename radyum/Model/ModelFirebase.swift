@@ -72,7 +72,8 @@ class ModelFirebase{
         let storageRef = Storage.storage().reference(forURL:
             "gs://radyum-4db50.appspot.com")
         let data = image.jpegData(compressionQuality: 0.5)
-        let imageRef = storageRef.child((getCurrentUser()?.email)! + getTime())
+        let name = kind + "-" + (getCurrentUser()?.email)! + getTime()
+        let imageRef = storageRef.child(name)
         let metadata = StorageMetadata()
         metadata.contentType = "image/jpeg"
         imageRef.putData(data!, metadata: metadata) { (metadata, error) in
@@ -95,10 +96,6 @@ class ModelFirebase{
     
     func editUserPicUrl(url:String){
         let db = Firestore.firestore()
-        if(Model.currentUser?.avatar != nil){
-        let storageRef = Storage.storage().reference(forURL:
-            "gs://radyum-4db50.appspot.com").child(Model.currentUser!.avatar!).delete(completion: nil)
-        }
         db.collection("users").document(Auth.auth().currentUser!.uid).updateData(["avatar":url])
     }
     

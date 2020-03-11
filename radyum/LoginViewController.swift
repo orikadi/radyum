@@ -80,7 +80,12 @@ class LoginViewController: UIViewController {
  
     }
     
-    @IBAction func toLogin(segue:UIStoryboardSegue){}
+    @IBAction func toLogin(segue:UIStoryboardSegue){
+        if(segue.identifier == "logoutSegue"){
+            emailText.text = ""
+            passwordText.text = ""
+        }
+    }
    
     
 

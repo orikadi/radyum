@@ -20,7 +20,6 @@ class AddReviewViewController: UIViewController, UIImagePickerControllerDelegate
     @IBOutlet var backButton: UIView!
     var picUrl:String = ""
     
-    //TODO: add picture button functionality, make picture appear in uiimageview
     
     
     override func viewDidLoad() {
@@ -43,7 +42,7 @@ class AddReviewViewController: UIViewController, UIImagePickerControllerDelegate
         }
         else {
             if(picture.image != nil){
-            Model.modelFirebaseInstance.saveImage(image: self.picture.image!, kind: "reviewPicture") { (url) in
+                Model.modelFirebaseInstance.saveImage(image: self.picture.image!, kind: "review") { (url) in
                 self.picUrl = url
                 Model.modelFirebaseInstance.addReview(user: Model.currentUser!, restaurant: self.restaurant!, text: self.reviewText.text!, picture: self.picUrl)
                 self.performSegue(withIdentifier: "backToRestaurantProfile", sender: self)

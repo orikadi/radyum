@@ -17,7 +17,6 @@ class RestaurantProfilePageViewController: UIViewController {
     @IBOutlet weak var addReviewButton: UIButton!
     
     var backTo:String?
-    //TODO: check if back button with navBar or if you can pop a view without a navBar!!
     
     
     override func viewDidLoad() {
