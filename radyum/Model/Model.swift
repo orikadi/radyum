@@ -43,6 +43,11 @@ class Model{
     func getAllReviewsByRestaurantID(resId:String,callback:@escaping ([Review]?)->Void){
         Model.modelFirebaseInstance.getAllReviewsByRestaurantID(resId:resId,callback: callback);
        }
+    
+    func getAllReviewsByUserEmail(userEmail:String,callback:@escaping ([Review]?)->Void){
+    Model.modelFirebaseInstance.getAllReviewsByUserEmail(userEmail:userEmail,callback: callback);
+       }
+    
 //     func getAllReviews(callback:@escaping ([Review]?)->Void){
 //        print("get all reviews called")
 //        //get the local last update date

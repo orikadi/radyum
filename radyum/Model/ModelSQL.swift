@@ -28,6 +28,7 @@ class ModelSQL{
         }
         create()
         Restaurant.create_table(database: database)
+        //TODO: add review.create table
     }
     
     deinit {

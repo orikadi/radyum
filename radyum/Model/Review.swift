@@ -13,6 +13,7 @@ class Review{
     var userEmail:String
     var userName:String
     var resId:String
+    var resName:String
     var text:String
     var picture:String = ""
     var lastUpdate: Int64?
@@ -22,13 +23,15 @@ class Review{
         self.userEmail = userEmail
         self.userName = ""
         self.resId = resId
+        self.resName = ""
         self.text = text
         }
-    init (id:String, userEmail:String, userName:String, resId:String, text:String){
+    init (id:String, userEmail:String, userName:String, resId:String, resName:String, text:String){
         self.id = id
         self.userEmail = userEmail
         self.userName = userName
         self.resId = resId
+        self.resName = resName
         self.text = text
     }
 }

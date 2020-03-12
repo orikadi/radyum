@@ -349,7 +349,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0xM-oD-0Pg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="T4W-O5-w4R" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4780" y="658.92053973013503"/>
+            <point key="canvasLocation" x="4722" y="1101"/>
         </scene>
         <!--Restaurant Reviews Table View Controller-->
         <scene sceneID="NCe-P9-wZQ">
@@ -532,7 +532,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q7X-Vj-pXP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1900" y="1219"/>
+            <point key="canvasLocation" x="1900" y="2074"/>
         </scene>
         <!--Profile-->
         <scene sceneID="NfP-V9-2GA">
@@ -542,18 +542,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="latest reviews:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAs-DV-cQa">
-                                <rect key="frame" x="16" y="195" width="110" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KYr-k4-56B">
-                                <rect key="frame" x="0.0" y="226" width="375" height="399"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="user name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nxB-Sz-fnH">
                                 <rect key="frame" x="16" y="20" width="177" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -586,6 +574,14 @@
                                     <action selector="logout:" destination="dco-6V-H73" eventType="touchUpInside" id="v9L-dR-gaI"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ghy-Pc-40H">
+                                <rect key="frame" x="16" y="219" width="147" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="View Reviews"/>
+                                <connections>
+                                    <segue destination="JYZ-Tt-Pew" kind="show" identifier="fromUserProfileToReviews" id="MXI-Wi-36A"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Iq2-ir-DIh"/>
@@ -603,7 +599,64 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CVh-VA-rL0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="4kI-Cw-Yny" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1900" y="1943.4782608695655"/>
+            <point key="canvasLocation" x="1900" y="1270"/>
+        </scene>
+        <!--User Reviews Table View Controller-->
+        <scene sceneID="On3-pz-bu0">
+            <objects>
+                <tableViewController id="JYZ-Tt-Pew" customClass="UserReviewsTableViewController" customModule="radyum" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="D9D-24-LQK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserReviewCell" rowHeight="84" id="gIT-lF-7hO" customClass="UserReviewsTableViewCell" customModule="radyum" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="84"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gIT-lF-7hO" id="Kvx-pO-qnf">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6im-vO-W9l">
+                                            <rect key="frame" x="0.0" y="0.0" width="117" height="84"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="restaurant name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T5u-yM-Zy6">
+                                            <rect key="frame" x="125" y="0.0" width="110" height="84"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtl-Ya-jlB">
+                                            <rect key="frame" x="243" y="0.0" width="116" height="84"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="resName" destination="T5u-yM-Zy6" id="MoY-pR-FQe"/>
+                                    <outlet property="reviewImage" destination="6im-vO-W9l" id="aIn-rY-sYN"/>
+                                    <outlet property="reviewText" destination="gtl-Ya-jlB" id="fct-D8-wGD"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="JYZ-Tt-Pew" id="PRl-Xf-pEm"/>
+                            <outlet property="delegate" destination="JYZ-Tt-Pew" id="jnD-IT-CUb"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="lwX-dL-4zq"/>
+                    <connections>
+                        <segue destination="Ygk-i6-5Zf" kind="show" identifier="fromUserReviewsToReviewDisplay" id="lVW-7q-wWF"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pZb-hN-YHO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2946.4000000000001" y="1298.5007496251876"/>
         </scene>
         <!--Restaurants-->
         <scene sceneID="xJS-Fl-IgV">
@@ -739,6 +792,7 @@
         <image name="tuningfork" catalog="system" width="64" height="58"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="lVW-7q-wWF"/>
         <segue reference="BCv-gG-NPY"/>
     </inferredMetricsTieBreakers>
 </document>
