@@ -28,6 +28,8 @@
 		3D03AA4D23D70920001D08DC /* ModelSQL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D03AA4C23D70920001D08DC /* ModelSQL.swift */; };
 		3D03AA4F23D7227A001D08DC /* ModelFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D03AA4E23D7227A001D08DC /* ModelFirebase.swift */; };
 		3D03AA5123D722A4001D08DC /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D03AA5023D722A4001D08DC /* Review.swift */; };
+		3D1B6F3A241A938300126F7A /* UserReviewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1B6F39241A938300126F7A /* UserReviewsTableViewController.swift */; };
+		3D1B6F3C241A945200126F7A /* UserReviewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1B6F3B241A945200126F7A /* UserReviewsTableViewCell.swift */; };
 		3D4B762F2411509800384E5D /* DisplayReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4B762E2411509800384E5D /* DisplayReviewViewController.swift */; };
 		3D5E857C23D751C000092A01 /* Firebase+User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5E857B23D751C000092A01 /* Firebase+User.swift */; };
 		3D87BBE4240BF7A90037AF4F /* Firebase+Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D87BBE3240BF7A90037AF4F /* Firebase+Restaurant.swift */; };
@@ -91,6 +93,8 @@
 		3D03AA4C23D70920001D08DC /* ModelSQL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSQL.swift; sourceTree = "<group>"; };
 		3D03AA4E23D7227A001D08DC /* ModelFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFirebase.swift; sourceTree = "<group>"; };
 		3D03AA5023D722A4001D08DC /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		3D1B6F39241A938300126F7A /* UserReviewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserReviewsTableViewController.swift; sourceTree = "<group>"; };
+		3D1B6F3B241A945200126F7A /* UserReviewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserReviewsTableViewCell.swift; sourceTree = "<group>"; };
 		3D4B762E2411509800384E5D /* DisplayReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayReviewViewController.swift; sourceTree = "<group>"; };
 		3D5E857B23D751C000092A01 /* Firebase+User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firebase+User.swift"; sourceTree = "<group>"; };
 		3D87BBE3240BF7A90037AF4F /* Firebase+Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firebase+Restaurant.swift"; sourceTree = "<group>"; };
@@ -185,6 +189,8 @@
 				3D4B762E2411509800384E5D /* DisplayReviewViewController.swift */,
 				3DC6A69A241928370035154C /* RestaurantReviewsTableViewController.swift */,
 				3DC6A69E241934170035154C /* RestaurantReviewsTableViewCell.swift */,
+				3D1B6F39241A938300126F7A /* UserReviewsTableViewController.swift */,
+				3D1B6F3B241A945200126F7A /* UserReviewsTableViewCell.swift */,
 			);
 			path = radyum;
 			sourceTree = "<group>";
@@ -496,7 +502,9 @@
 				3DCCD816240FECDD00DF5301 /* Firebase+Review.swift in Sources */,
 				3D03AA3823D6E619001D08DC /* MapPageViewController.swift in Sources */,
 				3D87BBE4240BF7A90037AF4F /* Firebase+Restaurant.swift in Sources */,
+				3D1B6F3C241A945200126F7A /* UserReviewsTableViewCell.swift in Sources */,
 				3D03AA4023D6E826001D08DC /* FeedPageTableViewController.swift in Sources */,
+				3D1B6F3A241A938300126F7A /* UserReviewsTableViewController.swift in Sources */,
 				3D03AA4D23D70920001D08DC /* ModelSQL.swift in Sources */,
 				3DC6A69B241928370035154C /* RestaurantReviewsTableViewController.swift in Sources */,
 				3DD72FCE23FACA7E004724B5 /* SpinnerViewController.swift in Sources */,

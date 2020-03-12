@@ -73,7 +73,12 @@ class ProfilePgeViewController: UIViewController, UIImagePickerControllerDelegat
         performSegue(withIdentifier: "logoutSegue", sender: self)
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+         if segue.identifier == "fromUserProfileToReviews" {
+                  let vc:UserReviewsTableViewController = segue.destination as! UserReviewsTableViewController
+                  vc.user = user
+              }
+     }
     /*
     // MARK: - Navigation
 
