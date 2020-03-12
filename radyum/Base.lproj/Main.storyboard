@@ -310,7 +310,7 @@
                                 <rect key="frame" x="44" y="399" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="For" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NBa-ZF-oMb">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="For:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NBa-ZF-oMb">
                                 <rect key="frame" x="25" y="58" width="37" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -345,6 +345,7 @@
                         <outlet property="userNameLabel" destination="pqz-ZI-dGF" id="AxP-B7-J0V"/>
                         <segue destination="T4W-O5-w4R" kind="unwind" identifier="backToRestaurantReview" unwindAction="backToRestaurantReviewsWithSegue:" id="3Be-aJ-rHo"/>
                         <segue destination="T4W-O5-w4R" kind="unwind" identifier="backToUser" unwindAction="toUserReviewsTableWithSegue:" id="JcH-wj-AYc"/>
+                        <segue destination="T4W-O5-w4R" kind="unwind" identifier="backToFeed" unwindAction="backToFeedWithSegue:" id="Qt8-xn-ig2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0xM-oD-0Pg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -515,13 +516,38 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="MDT-cS-Lia">
-                                <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeedPageCell" rowHeight="87" id="MDT-cS-Lia" customClass="FeedPageTableViewCell" customModule="radyum" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="87"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MDT-cS-Lia" id="SmF-fT-fcz">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="87"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j8J-iV-Kdo">
+                                            <rect key="frame" x="0.0" y="0.0" width="131" height="87"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="user name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qpq-bX-1xG">
+                                            <rect key="frame" x="139" y="0.0" width="112" height="87"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="restaurant name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CDj-Qd-adn">
+                                            <rect key="frame" x="253" y="0.0" width="125" height="87"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="resNameLabel" destination="CDj-Qd-adn" id="3Ep-oD-ktb"/>
+                                    <outlet property="reviewImage" destination="j8J-iV-Kdo" id="I9h-ql-PhV"/>
+                                    <outlet property="userNameLabel" destination="Qpq-bX-1xG" id="eqs-nC-aDe"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -530,10 +556,13 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Feed" image="message" catalog="system" selectedImage="message" id="Pm3-Hm-HRg"/>
+                    <connections>
+                        <segue destination="Ygk-i6-5Zf" kind="show" identifier="fromFeedPageToReviewDisplay" id="slU-iX-Q3m"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q7X-Vj-pXP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1900" y="1532"/>
+            <point key="canvasLocation" x="1900" y="1531.4842578710645"/>
         </scene>
         <!--Profile-->
         <scene sceneID="NfP-V9-2GA">
@@ -803,7 +832,7 @@
         <image name="tuningfork" catalog="system" width="64" height="58"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="edw-3a-aqv"/>
+        <segue reference="slU-iX-Q3m"/>
         <segue reference="BCv-gG-NPY"/>
     </inferredMetricsTieBreakers>
 </document>

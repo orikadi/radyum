@@ -9,8 +9,6 @@
 import UIKit
 
 class RestaurantsTableViewController: UITableViewController {
-
-    //TODO: updating firebase info doesnt change local content? recheck
     
     @IBOutlet var searchBar: UITableView! //DELETE
     var data = [Restaurant]()
@@ -22,6 +20,7 @@ class RestaurantsTableViewController: UITableViewController {
         self.refreshControl = UIRefreshControl()
         self.refreshControl?.addTarget(self, action: #selector(reloadData), for: .valueChanged)
          
+        //OBSERVE REDUNDANT? no post() (no adding of restaurants)
         ModelEvents.RestaurantDataEvent.observe {
             self.refreshControl?.beginRefreshing()
             self.reloadData();

@@ -145,7 +145,6 @@ class ModelFirebase{
                         print("Document added with ID\(ref!.documentID)")
                     }
                 }
-        //TODO: yoav add picture url in setData if picture is not ""
         ref?.setData((["id": ref!.documentID]),merge: true)
         ModelEvents.ReviewDataEvent.post()
     }

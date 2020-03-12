@@ -10,6 +10,9 @@ import UIKit
 
 class FeedPageTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var reviewImage: UIImageView!
+    @IBOutlet weak var resNameLabel: UILabel!
+    @IBOutlet weak var userNameLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

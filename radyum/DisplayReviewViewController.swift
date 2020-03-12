@@ -36,6 +36,9 @@ class DisplayReviewViewController: UIViewController {
         if(returnTo == "UserReviewsTableViewController"){
             performSegue(withIdentifier: "backToUser", sender: self)
         }
+        if(returnTo == "FeedPageTableViewController"){
+            performSegue(withIdentifier: "backToFeed", sender: self)
+        }
     }
     
     /*

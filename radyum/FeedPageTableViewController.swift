@@ -29,7 +29,7 @@ class FeedPageTableViewController: UITableViewController {
     @objc func reloadData(){
        Model.instance.getAllReviews { (_data:[Review]?) in
        if (_data != nil) {
-           self.data = _data!;
+           self.data = _data!.reversed();
            self.tableView.reloadData();
            }
            self.refreshControl?.endRefreshing()
@@ -48,11 +48,11 @@ class FeedPageTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:RestaurantReviewsTableViewCell = tableView.dequeueReusableCell(withIdentifier: "RestaurantReviewCell", for: indexPath) as! RestaurantReviewsTableViewCell
+           let cell:FeedPageTableViewCell = tableView.dequeueReusableCell(withIdentifier: "FeedPageCell", for: indexPath) as! FeedPageTableViewCell
            let review = data[indexPath.row]
-        
-           cell.reviewText.text = review.text
-           cell.reviewImage.image = UIImage(named: "picture") //named: picture ?
+           cell.resNameLabel.text = review.resName
+           cell.userNameLabel.text = review.userName
+           cell.reviewImage.image = UIImage(named: "picture")
            if review.picture != "" {
                cell.reviewImage.kf.setImage(with: URL(string: review.picture))
            }
@@ -61,54 +61,19 @@ class FeedPageTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selected = data[indexPath.row]
-        //performSegue(withIdentifier: "fromRestaurantReviewsToReviewDisplay", sender: self)
-        print(selected?.text)
+        performSegue(withIdentifier: "fromFeedPageToReviewDisplay", sender: self)
     }
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+         if (segue.identifier == "fromFeedPageToReviewDisplay") {
+             let vc:DisplayReviewViewController = segue.destination as! DisplayReviewViewController
+             vc.review = selected
+             vc.restaurantName = selected?.resName
+            vc.returnTo = "FeedPageTableViewController"
+         }
+     }
+    
+  
     
     @IBAction func backToFeed(segue:UIStoryboardSegue){}
 

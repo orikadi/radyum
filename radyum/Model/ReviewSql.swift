@@ -29,7 +29,7 @@ extension Review{
             let userEmail = self.userEmail.cString(using: .utf8)
             let userName = self.userName.cString(using: .utf8)
             let resId = self.resId.cString(using: .utf8)
-            let resName = self.resId.cString(using: .utf8)
+            let resName = self.resName.cString(using: .utf8)
             let revText = self.text.cString(using: .utf8)
             let picture = self.picture.cString(using: .utf8)
             sqlite3_bind_text(sqlite3_stmt, 1, id,-1,nil)
@@ -60,7 +60,7 @@ extension Review{
                 let text = String(cString:sqlite3_column_text(sqlite3_stmt,5)!)
                 //make a get function that gets user from email?
                 let review = Review(id: id, userEmail: userEmail, userName: userName, resId: resId, resName: resName, text: text)
-                review.picture = String(cString:sqlite3_column_text(sqlite3_stmt,5)!)
+                review.picture = String(cString:sqlite3_column_text(sqlite3_stmt,6)!)
                 data.append(review)
             }
         }
