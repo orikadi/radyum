@@ -17,7 +17,7 @@ extension Review{
         let resName = json["restaurantName"] as! String
         let text = json["text"] as! String
         let pic = json["picture"] as! String
-        let ts = json["lastUpdate"] as! Timestamp
+        let ts = json["lastUpdate"] as! Timestamp //TODO: fix NSNull on quick review adding with picture
         self.init(id:id, userEmail:userEmail, userName:userName, resId:resId, resName:resName, text: text)
         picture = pic
         lastUpdate = ts.seconds
