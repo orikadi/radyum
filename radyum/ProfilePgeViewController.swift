@@ -70,7 +70,6 @@ class ProfilePgeViewController: UIViewController, UIImagePickerControllerDelegat
         do{try Auth.auth().signOut()}
         catch{print("cant sign out")}
         Model.currentUser = nil
-        self.user = nil
         performSegue(withIdentifier: "logoutSegue", sender: self)
     }
     
