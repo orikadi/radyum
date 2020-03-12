@@ -16,6 +16,8 @@ class Model{
     static var currentUser:User?
     static var userId:String?
     
+   
+    
      func getAllRestaurants(callback:@escaping ([Restaurant]?)->Void){
         print("get all restaurants called")
         //get the local last update date

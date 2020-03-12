@@ -12,17 +12,17 @@ class DisplayReviewViewController: UIViewController {
 
     @IBOutlet weak var restaurantNameLabel: UILabel!
     @IBOutlet weak var userNameLabel: UILabel!
-    
     @IBOutlet weak var reviewTextLabel: UILabel!
-    
-    var user:User?
-    var restaurant:Restaurant?
+    @IBOutlet weak var picture: UIImageView!
+    var review:Review?
+    var restaurantName:String?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        userNameLabel.text = review?.userName
+        restaurantNameLabel.text = restaurantName
+        reviewTextLabel.text = review?.text
     }
     
     @IBAction func backAction(_ sender: Any) {

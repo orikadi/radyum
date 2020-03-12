@@ -339,6 +339,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="WtS-t6-s27"/>
                     <connections>
+                        <outlet property="picture" destination="EDK-om-5uR" id="9D7-CP-1Yd"/>
                         <outlet property="restaurantNameLabel" destination="48r-Vk-afc" id="b1Q-6u-ikF"/>
                         <outlet property="reviewTextLabel" destination="ocQ-zL-yK4" id="Yrf-e4-ROf"/>
                         <outlet property="userNameLabel" destination="pqz-ZI-dGF" id="AxP-B7-J0V"/>
@@ -380,8 +381,9 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OTm-Mp-tIB">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="OTm-Mp-tIB">
                                             <rect key="frame" x="0.0" y="0.0" width="122" height="88"/>
+                                            <autoresizingMask key="autoresizingMask" heightSizable="YES"/>
                                         </imageView>
                                     </subviews>
                                     <constraints>
@@ -392,7 +394,6 @@
                                 <connections>
                                     <outlet property="reviewImage" destination="OTm-Mp-tIB" id="6us-Q6-ahn"/>
                                     <outlet property="reviewText" destination="B0K-AG-EK4" id="Fzf-jm-9lK"/>
-                                    <segue destination="Ygk-i6-5Zf" kind="show" identifier="fromRestaurantReviewsToReviewDisplay" id="ycH-bL-Tfo"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -404,12 +405,13 @@
                     <navigationItem key="navigationItem" id="kJ9-cO-Cp7"/>
                     <connections>
                         <segue destination="5bO-wK-Kjm" kind="unwind" identifier="fromRestaurantReviewsToRestaurant" unwindAction="backToRestaurantProfileWithSegue:" id="3xk-Ug-um5"/>
+                        <segue destination="Ygk-i6-5Zf" kind="show" identifier="fromRestaurantReviewsToReviewDisplay" id="edw-3a-aqv"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6HZ-rE-u2b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="5bO-wK-Kjm" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3920.8000000000002" y="658.92053973013503"/>
+            <point key="canvasLocation" x="3897" y="659"/>
         </scene>
         <!--Add Review View Controller-->
         <scene sceneID="QoV-Ak-EV9">

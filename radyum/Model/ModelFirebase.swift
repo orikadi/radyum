@@ -43,6 +43,10 @@ class ModelFirebase{
         }
         return user
     }
+        func getUserByEmail(userEmail:String, callback:@escaping (User)->Void) {
+    
+    
+           }
     
     func getAllRestaurants(since:Int64, callback: @escaping ([Restaurant]?)->Void){
          let db = Firestore.firestore()
@@ -67,6 +71,11 @@ class ModelFirebase{
              }
          };
      }
+    
+//    func getRestaurantByID(resId:String, callback:@escaping (Restaurant)->Void) {
+//           
+//           
+//       }
     
     func saveImage(image:UIImage, kind:String, callback:@escaping (String)->Void){
         let storageRef = Storage.storage().reference(forURL:

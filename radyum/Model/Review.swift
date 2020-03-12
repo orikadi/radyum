@@ -9,10 +9,9 @@
 import Foundation
 
 class Review{
-    let id:String? //document id
-    //var user:User
-    //var restaurant:Restaurant
+    let id:String?
     var userEmail:String
+    var userName:String
     var resId:String
     var text:String
     var picture:String = ""
@@ -21,12 +20,14 @@ class Review{
     init (userEmail:String, resId:String, text:String){
         id = ""
         self.userEmail = userEmail
+        self.userName = ""
         self.resId = resId
         self.text = text
         }
-    init (id:String, userEmail:String, resId:String, text:String){
+    init (id:String, userEmail:String, userName:String, resId:String, text:String){
         self.id = id
         self.userEmail = userEmail
+        self.userName = userName
         self.resId = resId
         self.text = text
     }

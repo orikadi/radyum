@@ -12,13 +12,12 @@ extension Review{
     convenience init(json:[String:Any]){
         let id = json["id"] as! String
         let userEmail = json["userEmail"] as! String
+        let userName = json["userName"] as! String
         let resId = json["restaurantId"] as! String
-//        let user = json["user"] as! User
-//        let restaurant = json["restaurant"] as! Restaurant
         let text = json["text"] as! String
         let pic = json["picture"] as! String
         let ts = json["lastUpdate"] as! Timestamp
-        self.init(id:id, userEmail:userEmail, resId:resId, text: text)
+        self.init(id:id, userEmail:userEmail, userName:userName, resId:resId, text: text)
         picture = pic
         lastUpdate = ts.seconds
     }
@@ -26,9 +25,8 @@ extension Review{
     func toJson() -> [String:Any] {
         var json = [String:Any]();
         json["userEmail"] = userEmail
+        json["userName"] = userName
         json["resId"] = resId
-//        json["user"] = user
-//        json["restaurant"] = restaurant
         json["text"] = text
         json["picture"] = picture
         json["lastUpdate"] = FieldValue.serverTimestamp()
