@@ -14,6 +14,7 @@ class Model{
     static let instance = Model()
     static let modelFirebaseInstance:ModelFirebase = ModelFirebase()
     static var currentUser:User?
+    static var userId:String?
     
      func getAllRestaurants(callback:@escaping ([Restaurant]?)->Void){
         print("get all restaurants called")

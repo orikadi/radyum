@@ -96,7 +96,7 @@ class ModelFirebase{
     
     func editUserPicUrl(url:String){
         let db = Firestore.firestore()
-        db.collection("users").document(Auth.auth().currentUser!.uid).updateData(["avatar":url])
+        db.collection("users").document(Model.userId!).updateData(["avatar":url])
     }
     
     //TODO: ADD MODELEVENT FOR REVIEWS WITH POST AND OBSERVE
