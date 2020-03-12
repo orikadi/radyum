@@ -89,6 +89,6 @@ class ProfilePgeViewController: UIViewController, UIImagePickerControllerDelegat
     }
     */
     
-    
+    @IBAction func toProfilePage(segue:UIStoryboardSegue){}
     
 }

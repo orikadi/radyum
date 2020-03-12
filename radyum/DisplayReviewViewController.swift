@@ -16,6 +16,7 @@ class DisplayReviewViewController: UIViewController {
     @IBOutlet weak var picture: UIImageView!
     var review:Review?
     var restaurantName:String?
+    var returnTo:String?
     
     
     override func viewDidLoad() {
@@ -29,7 +30,12 @@ class DisplayReviewViewController: UIViewController {
     }
     
     @IBAction func backAction(_ sender: Any) {
-        performSegue(withIdentifier: "backToRestaurantReview", sender: self)
+        if(returnTo == "RestaurantReviewsTableViewController"){
+            performSegue(withIdentifier: "backToRestaurantReview", sender: self)
+        }
+        if(returnTo == "UserReviewsTableViewController"){
+            performSegue(withIdentifier: "backToUser", sender: self)
+        }
     }
     
     /*

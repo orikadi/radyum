@@ -25,6 +25,10 @@ class UserReviewsTableViewController: UITableViewController {
          self.refreshControl?.beginRefreshing()
          reloadData();
     }
+    @IBAction func backAction(_ sender: Any) {
+        performSegue(withIdentifier: "returnToProfile", sender: self)
+    }
+    
     @objc func reloadData(){
           //get all reviews for this user
         Model.instance.getAllReviewsByUserEmail(userEmail: user!.email) { (_data:[Review]?) in
@@ -67,9 +71,11 @@ class UserReviewsTableViewController: UITableViewController {
                   let vc:DisplayReviewViewController = segue.destination as! DisplayReviewViewController
                 vc.review = selected
                 vc.restaurantName = selected?.resName
+                vc.returnTo = "UserReviewsTableViewController"
               }
           }
     
-    
+    @IBAction func toUserReviewsTable(segue:UIStoryboardSegue){}
+
     
 }
