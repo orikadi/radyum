@@ -17,7 +17,6 @@ class Model{
     static var userId:String?
     
    
-    
      func getAllRestaurants(callback:@escaping ([Restaurant]?)->Void){
         print("get all restaurants called")
         //get the local last update date
@@ -40,6 +39,30 @@ class Model{
             callback(finalData);
         }
     }
+    
+     func getAllReviews(callback:@escaping ([Review]?)->Void){
+        print("get all reviews called")
+        //get the local last update date
+        let lud = Review.getLastUpdateDate();
+        
+        //get the cloud updates since the local update date
+        Model.modelFirebaseInstance.getAllReviews(since:lud) { (data) in
+            //insert update to the local db
+            var lud:Int64 = 0;
+            for review in data!{
+                review.addToDb()
+                print("review's current last update date") //test
+                if review.lastUpdate! > lud {lud = review.lastUpdate!}
+            }
+            if (data!.count == 0) {print("no reviews found")} //test
+            //update the restaurants local last update date
+            Restaurant.setLastUpdate(lastUpdated: lud)
+            // get the complete restaurant list
+            let finalData = Review.getAllReviewsFromDb()
+            callback(finalData);
+        }
+    }
+    
     func getAllReviewsByRestaurantID(resId:String,callback:@escaping ([Review]?)->Void){
         Model.modelFirebaseInstance.getAllReviewsByRestaurantID(resId:resId,callback: callback);
        }

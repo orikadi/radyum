@@ -30,6 +30,7 @@
 		3D03AA5123D722A4001D08DC /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D03AA5023D722A4001D08DC /* Review.swift */; };
 		3D1B6F3A241A938300126F7A /* UserReviewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1B6F39241A938300126F7A /* UserReviewsTableViewController.swift */; };
 		3D1B6F3C241A945200126F7A /* UserReviewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1B6F3B241A945200126F7A /* UserReviewsTableViewCell.swift */; };
+		3D1B6F3E241AA30200126F7A /* FeedPageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1B6F3D241AA30200126F7A /* FeedPageTableViewCell.swift */; };
 		3D4B762F2411509800384E5D /* DisplayReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4B762E2411509800384E5D /* DisplayReviewViewController.swift */; };
 		3D5E857C23D751C000092A01 /* Firebase+User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D5E857B23D751C000092A01 /* Firebase+User.swift */; };
 		3D87BBE4240BF7A90037AF4F /* Firebase+Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D87BBE3240BF7A90037AF4F /* Firebase+Restaurant.swift */; };
@@ -95,6 +96,7 @@
 		3D03AA5023D722A4001D08DC /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		3D1B6F39241A938300126F7A /* UserReviewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserReviewsTableViewController.swift; sourceTree = "<group>"; };
 		3D1B6F3B241A945200126F7A /* UserReviewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserReviewsTableViewCell.swift; sourceTree = "<group>"; };
+		3D1B6F3D241AA30200126F7A /* FeedPageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPageTableViewCell.swift; sourceTree = "<group>"; };
 		3D4B762E2411509800384E5D /* DisplayReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayReviewViewController.swift; sourceTree = "<group>"; };
 		3D5E857B23D751C000092A01 /* Firebase+User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firebase+User.swift"; sourceTree = "<group>"; };
 		3D87BBE3240BF7A90037AF4F /* Firebase+Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Firebase+Restaurant.swift"; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				3D03AA3723D6E619001D08DC /* MapPageViewController.swift */,
 				3D03AA3D23D6E74F001D08DC /* ProfilePgeViewController.swift */,
 				3D03AA3F23D6E826001D08DC /* FeedPageTableViewController.swift */,
+				3D1B6F3D241AA30200126F7A /* FeedPageTableViewCell.swift */,
 				3D03AA4623D6ED57001D08DC /* RestaurantProfilePageViewController.swift */,
 				3DD72FCD23FACA7E004724B5 /* SpinnerViewController.swift */,
 				3DD72FCF23FAD599004724B5 /* RestaurantTableViewCell.swift */,
@@ -495,6 +498,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D03AA4523D6EBF2001D08DC /* Restaurant.swift in Sources */,
+				3D1B6F3E241AA30200126F7A /* FeedPageTableViewCell.swift in Sources */,
 				3D4B762F2411509800384E5D /* DisplayReviewViewController.swift in Sources */,
 				3D03AA3423D6E2F1001D08DC /* LoginViewController.swift in Sources */,
 				3DD72FD223FADDC1004724B5 /* RestaurantsTableViewController.swift in Sources */,

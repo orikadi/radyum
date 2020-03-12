@@ -71,11 +71,29 @@ class ModelFirebase{
              }
          };
      }
-    
-//    func getRestaurantByID(resId:String, callback:@escaping (Restaurant)->Void) {
-//           
-//           
-//       }
+    func getAllReviews(since:Int64, callback: @escaping ([Review]?)->Void){
+          let db = Firestore.firestore()
+          db.collection("reviews").order(by: "lastUpdate").start(at: [Timestamp(seconds: since, nanoseconds: 0)]).getDocuments { (querySnapshot, err) in
+              if let err = err {
+                  print("Error getting documents: \(err)")
+                  callback(nil);
+              } else {
+                  var data = [Review]();
+                  for document in querySnapshot!.documents {
+                      if let ts = document.data()["lastUpdate"] as? Timestamp{
+                          let tsDate = ts.dateValue();
+                          print("\(tsDate)");
+                          let tsDouble = tsDate.timeIntervalSince1970;
+                          print("\(tsDouble)");
+
+                      }
+                     print(document.data())
+                     data.append(Review(json: document.data()));
+                  }
+                  callback(data);
+              }
+          };
+      }
     
     func saveImage(image:UIImage, kind:String, callback:@escaping (String)->Void){
         let storageRef = Storage.storage().reference(forURL:

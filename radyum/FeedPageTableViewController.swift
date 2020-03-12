@@ -27,14 +27,13 @@ class FeedPageTableViewController: UITableViewController {
     }
     
     @objc func reloadData(){
-        //get all reviews for this restaurant
-        //Model.instance.getAllReviews()
-//        Model.instance.getAllReviewsByRestaurantID(resId: restaurant!.id) { (_data:[Review]?) in
-//             if (_data != nil) {
-//                 self.data = _data!;
-//                 self.tableView.reloadData();
-//            }
-            self.refreshControl?.endRefreshing()
+       Model.instance.getAllReviews { (_data:[Review]?) in
+       if (_data != nil) {
+           self.data = _data!;
+           self.tableView.reloadData();
+           }
+           self.refreshControl?.endRefreshing()
+       };
     }
 
     // MARK: - Table view data source

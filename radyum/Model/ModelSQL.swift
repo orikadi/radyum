@@ -15,7 +15,7 @@ class ModelSQL{
     var database: OpaquePointer? = nil
     
     private init() {
-        let dbFileName = "database6.db"
+        let dbFileName = "database7.db"
         if let dir = FileManager.default.urls(for: .documentDirectory, in:
             .userDomainMask).first{
             let path = dir.appendingPathComponent(dbFileName)
@@ -28,6 +28,7 @@ class ModelSQL{
         }
         create()
         Restaurant.create_table(database: database)
+        Review.create_table(database: database) //needs different database pointer?
         //TODO: add review.create table
     }
     
