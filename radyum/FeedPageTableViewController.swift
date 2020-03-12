@@ -9,33 +9,62 @@
 import UIKit
 
 class FeedPageTableViewController: UITableViewController {
+    
+    var data = [Review]()
+    var selected:Review?
 
     override func viewDidLoad() {
-        super.viewDidLoad()
-        //TODO: ModelEvent Review observe func like in eliav's code
+         super.viewDidLoad()
+               self.refreshControl = UIRefreshControl()
+               self.refreshControl?.addTarget(self, action: #selector(reloadData), for: .valueChanged)
+                  
+               ModelEvents.ReviewDataEvent.observe {
+                     self.refreshControl?.beginRefreshing()
+                     self.reloadData();
+               }
+               self.refreshControl?.beginRefreshing()
+               reloadData();
+    }
+    
+    @objc func reloadData(){
+        //get all reviews for this restaurant
+        //Model.instance.getAllReviews()
+//        Model.instance.getAllReviewsByRestaurantID(resId: restaurant!.id) { (_data:[Review]?) in
+//             if (_data != nil) {
+//                 self.data = _data!;
+//                 self.tableView.reloadData();
+//            }
+            self.refreshControl?.endRefreshing()
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return data.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+        let cell:RestaurantReviewsTableViewCell = tableView.dequeueReusableCell(withIdentifier: "RestaurantReviewCell", for: indexPath) as! RestaurantReviewsTableViewCell
+           let review = data[indexPath.row]
+        
+           cell.reviewText.text = review.text
+           cell.reviewImage.image = UIImage(named: "picture") //named: picture ?
+           if review.picture != "" {
+               cell.reviewImage.kf.setImage(with: URL(string: review.picture))
+           }
+           return cell
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selected = data[indexPath.row]
+        //performSegue(withIdentifier: "fromRestaurantReviewsToReviewDisplay", sender: self)
+        print(selected?.text)
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -81,5 +110,7 @@ class FeedPageTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @IBAction func backToFeed(segue:UIStoryboardSegue){}
 
 }

@@ -16,6 +16,7 @@ class DisplayReviewViewController: UIViewController {
     @IBOutlet weak var picture: UIImageView!
     var review:Review?
     var restaurantName:String?
+    var pictureUrl:String?
     
     
     override func viewDidLoad() {
@@ -23,6 +24,9 @@ class DisplayReviewViewController: UIViewController {
         userNameLabel.text = review?.userName
         restaurantNameLabel.text = restaurantName
         reviewTextLabel.text = review?.text
+        if(pictureUrl != ""){
+            picture.kf.setImage(with: URL(string: pictureUrl!))
+        }
     }
     
     @IBAction func backAction(_ sender: Any) {

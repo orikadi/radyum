@@ -84,6 +84,7 @@ class RestaurantReviewsTableViewController: UITableViewController {
                let vc:DisplayReviewViewController = segue.destination as! DisplayReviewViewController
             vc.review = selected
             vc.restaurantName = restaurant?.name
+            vc.pictureUrl = selected?.picture
            }
        }
     
