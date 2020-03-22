@@ -1,4 +1,4 @@
-//
+
 //  Firebase+Restaurant.swift
 //  radyum
 //
@@ -8,7 +8,6 @@
 
 import Foundation
 import Firebase
-
 extension Restaurant{
     convenience init(json:[String:Any]){
         let id = json["id"] as! String

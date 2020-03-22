@@ -33,7 +33,7 @@ class UserReviewsTableViewController: UITableViewController {
           //get all reviews for this user
         Model.instance.getAllReviewsByUserEmail(userEmail: user!.email) { (_data:[Review]?) in
                if (_data != nil) {
-                   self.data = _data!;
+                self.data = _data!.reversed();
                    self.tableView.reloadData();
               }
               self.refreshControl?.endRefreshing()

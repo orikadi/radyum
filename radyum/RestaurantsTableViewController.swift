@@ -32,7 +32,7 @@ class RestaurantsTableViewController: UITableViewController {
     @objc func reloadData(){
           Model.instance.getAllRestaurants { (_data:[Restaurant]?) in
           if (_data != nil) {
-              self.data = _data!;
+            self.data = _data!;
               self.tableView.reloadData();
               }
               self.refreshControl?.endRefreshing()

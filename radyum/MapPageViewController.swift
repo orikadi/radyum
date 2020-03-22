@@ -61,7 +61,7 @@ class MapPageViewController: UIViewController,CLLocationManagerDelegate {
                 break
             case .denied:
                 // Show alert instructing them how to turn on permissions
-                let alert = UIAlertController(title: "WARNING", message: "permissioms", preferredStyle: UIAlertController.Style.alert)
+                let alert = UIAlertController(title: "WARNING", message: "permissions", preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction(title:"CONFIRM", style:UIAlertAction.Style.default, handler: {(action) in
                     //alert.dismiss(animated: true, completion: nil)
                 }))

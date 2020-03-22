@@ -527,21 +527,29 @@
                                             <rect key="frame" x="0.0" y="0.0" width="131" height="87"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="user name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qpq-bX-1xG">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="user name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qpq-bX-1xG">
                                             <rect key="frame" x="139" y="0.0" width="112" height="87"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="restaurant name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CDj-Qd-adn">
-                                            <rect key="frame" x="253" y="0.0" width="125" height="87"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="restaurant name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CDj-Qd-adn">
+                                            <rect key="frame" x="259" y="0.0" width="114" height="87"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="CDj-Qd-adn" firstAttribute="leading" secondItem="SmF-fT-fcz" secondAttribute="leading" constant="259" id="6tz-Am-qBm"/>
+                                        <constraint firstAttribute="bottom" secondItem="Qpq-bX-1xG" secondAttribute="bottom" id="7Li-X4-KOJ"/>
+                                        <constraint firstItem="Qpq-bX-1xG" firstAttribute="leading" secondItem="SmF-fT-fcz" secondAttribute="leading" constant="139" id="8Pz-EC-GRQ"/>
+                                        <constraint firstAttribute="bottom" secondItem="CDj-Qd-adn" secondAttribute="bottom" id="QFK-Co-zWW"/>
+                                        <constraint firstAttribute="trailing" secondItem="Qpq-bX-1xG" secondAttribute="trailing" constant="124" id="Xsh-Tf-mk5"/>
+                                        <constraint firstItem="CDj-Qd-adn" firstAttribute="top" secondItem="SmF-fT-fcz" secondAttribute="top" id="e3h-tT-9XY"/>
+                                        <constraint firstItem="Qpq-bX-1xG" firstAttribute="top" secondItem="SmF-fT-fcz" secondAttribute="top" id="nbX-fz-wF0"/>
+                                        <constraint firstAttribute="trailing" secondItem="CDj-Qd-adn" secondAttribute="trailing" constant="2" id="u8a-V1-BWa"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="resNameLabel" destination="CDj-Qd-adn" id="3Ep-oD-ktb"/>
@@ -659,21 +667,29 @@
                                             <rect key="frame" x="0.0" y="0.0" width="117" height="84"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="restaurant name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T5u-yM-Zy6">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="restaurant name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T5u-yM-Zy6">
                                             <rect key="frame" x="125" y="0.0" width="110" height="84"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtl-Ya-jlB">
-                                            <rect key="frame" x="243" y="0.0" width="116" height="84"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="text" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtl-Ya-jlB">
+                                            <rect key="frame" x="243" y="0.0" width="132" height="84"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="gtl-Ya-jlB" firstAttribute="top" secondItem="Kvx-pO-qnf" secondAttribute="top" id="DKk-iS-gbx"/>
+                                        <constraint firstItem="gtl-Ya-jlB" firstAttribute="leading" secondItem="Kvx-pO-qnf" secondAttribute="leading" constant="243" id="N3s-Ab-QIr"/>
+                                        <constraint firstAttribute="bottom" secondItem="gtl-Ya-jlB" secondAttribute="bottom" id="Nxy-Vp-d5z"/>
+                                        <constraint firstAttribute="bottom" secondItem="T5u-yM-Zy6" secondAttribute="bottom" id="VtF-zz-RW0"/>
+                                        <constraint firstAttribute="trailing" secondItem="T5u-yM-Zy6" secondAttribute="trailing" constant="140" id="XP0-Ev-Ubp"/>
+                                        <constraint firstItem="T5u-yM-Zy6" firstAttribute="leading" secondItem="Kvx-pO-qnf" secondAttribute="leading" constant="125" id="by2-OI-uyK"/>
+                                        <constraint firstAttribute="trailing" secondItem="gtl-Ya-jlB" secondAttribute="trailing" id="nSE-9k-a47"/>
+                                        <constraint firstItem="T5u-yM-Zy6" firstAttribute="top" secondItem="Kvx-pO-qnf" secondAttribute="top" id="oNP-Md-K10"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="resName" destination="T5u-yM-Zy6" id="MoY-pR-FQe"/>
@@ -696,7 +712,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pZb-hN-YHO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="enq-9N-3EC" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2945" y="809"/>
+            <point key="canvasLocation" x="2944.8000000000002" y="808.24587706146929"/>
         </scene>
         <!--Restaurants-->
         <scene sceneID="xJS-Fl-IgV">

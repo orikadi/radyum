@@ -32,7 +32,7 @@ class RestaurantReviewsTableViewController: UITableViewController {
         //get all reviews for this restaurant
         Model.instance.getAllReviewsByRestaurantID(resId: restaurant!.id) { (_data:[Review]?) in
              if (_data != nil) {
-                 self.data = _data!;
+                self.data = _data!.reversed();
                  self.tableView.reloadData();
             }
             self.refreshControl?.endRefreshing()
