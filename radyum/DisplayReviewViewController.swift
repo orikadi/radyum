@@ -14,13 +14,17 @@ class DisplayReviewViewController: UIViewController {
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var reviewTextLabel: UILabel!
     @IBOutlet weak var picture: UIImageView!
+    @IBOutlet weak var editButton: UIButton!
     var review:Review?
     var restaurantName:String?
     var returnTo:String?
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        editButton.isHidden = true
+        if (review?.userEmail == Model.currentUser?.email) {
+            editButton.isHidden = false
+        }
         userNameLabel.text = review?.userName
         restaurantNameLabel.text = restaurantName
         reviewTextLabel.text = review?.text
@@ -38,6 +42,13 @@ class DisplayReviewViewController: UIViewController {
         }
         if(returnTo == "FeedPageTableViewController"){
             performSegue(withIdentifier: "backToFeed", sender: self)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toEditReview" {
+            let vc:EditReviewViewController = segue.destination as! EditReviewViewController
+            vc.review = review
         }
     }
     

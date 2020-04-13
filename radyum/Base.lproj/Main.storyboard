@@ -333,12 +333,21 @@
                                     <action selector="backToRestaurantPage:" destination="YiF-nn-GtJ" eventType="touchUpInside" id="sbb-EJ-ZMO"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="euJ-rZ-yBL">
+                                <rect key="frame" x="309" y="20" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Edit"/>
+                                <connections>
+                                    <segue destination="LoP-Hv-76v" kind="show" identifier="toEditReview" id="Fsx-bi-FiQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="ycD-JO-ntf"/>
                     </view>
                     <navigationItem key="navigationItem" id="WtS-t6-s27"/>
                     <connections>
+                        <outlet property="editButton" destination="euJ-rZ-yBL" id="gJT-Uy-VOz"/>
                         <outlet property="picture" destination="EDK-om-5uR" id="9D7-CP-1Yd"/>
                         <outlet property="restaurantNameLabel" destination="48r-Vk-afc" id="b1Q-6u-ikF"/>
                         <outlet property="reviewTextLabel" destination="ocQ-zL-yK4" id="Yrf-e4-ROf"/>
@@ -351,7 +360,64 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0xM-oD-0Pg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="T4W-O5-w4R" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4874" y="1130"/>
+            <point key="canvasLocation" x="4872.8000000000002" y="1129.385307346327"/>
+        </scene>
+        <!--Edit Review View Controller-->
+        <scene sceneID="ZKU-X8-RBw">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="LoP-Hv-76v" customClass="EditReviewViewController" customModule="radyum" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Utp-nL-fOX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Edit review" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1d-Kg-7ce">
+                                <rect key="frame" x="16" y="42" width="343" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aV4-h8-B8z">
+                                <rect key="frame" x="67" y="486" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ycj-Uo-5bf">
+                                <rect key="frame" x="128" y="439" width="119" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Edit Picture"/>
+                                <connections>
+                                    <action selector="addPicture:" destination="YiF-nn-GtJ" eventType="touchUpInside" id="z2r-hS-cyz"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c3v-iQ-q6s">
+                                <rect key="frame" x="31" y="116" width="313" height="278"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PR1-FO-Avo">
+                                <rect key="frame" x="16" y="20" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6x1-tr-KBX">
+                                <rect key="frame" x="322" y="20" width="37" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Done"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="abd-Ew-P6S"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="I1a-Dc-0qJ"/>
+                    <connections>
+                        <outlet property="reviewPicture" destination="aV4-h8-B8z" id="dLt-NO-gYr"/>
+                        <outlet property="reviewText" destination="c3v-iQ-q6s" id="fNt-ef-f1q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vat-Z2-boa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5802.3999999999996" y="1144.6776611694154"/>
         </scene>
         <!--Restaurant Reviews Table View Controller-->
         <scene sceneID="NCe-P9-wZQ">

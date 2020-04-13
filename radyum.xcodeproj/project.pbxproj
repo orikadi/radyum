@@ -42,6 +42,7 @@
 		3DD72FD023FAD599004724B5 /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD72FCF23FAD599004724B5 /* RestaurantTableViewCell.swift */; };
 		3DD72FD223FADDC1004724B5 /* RestaurantsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD72FD123FADDC1004724B5 /* RestaurantsTableViewController.swift */; };
 		3E381B3D9D1AFB35DBAEACC0 /* Pods_radyumTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B95045E90261529CAAB4CB14 /* Pods_radyumTests.framework */; };
+		840F7B4B244494B70036CF6E /* EditReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840F7B4A244494B70036CF6E /* EditReviewViewController.swift */; };
 		841B7C8A2427A12400C1D173 /* Firebase+Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841B7C892427A12300C1D173 /* Firebase+Review.swift */; };
 		9074F29F1DB4FC050589B0FB /* Pods_radyum.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E53CA96C030020438F1CE906 /* Pods_radyum.framework */; };
 		A3CC5703466B0AB73ACC07A4 /* Pods_radyumUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB513E5F31A448B481218168 /* Pods_radyumUITests.framework */; };
@@ -107,6 +108,7 @@
 		3DD72FCD23FACA7E004724B5 /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
 		3DD72FCF23FAD599004724B5 /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
 		3DD72FD123FADDC1004724B5 /* RestaurantsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsTableViewController.swift; sourceTree = "<group>"; usesTabs = 0; };
+		840F7B4A244494B70036CF6E /* EditReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditReviewViewController.swift; sourceTree = "<group>"; };
 		841B7C892427A12300C1D173 /* Firebase+Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Firebase+Review.swift"; sourceTree = "<group>"; };
 		A658D976DAB8B560BFF25F1E /* Pods-radyumUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-radyumUITests.release.xcconfig"; path = "Target Support Files/Pods-radyumUITests/Pods-radyumUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B95045E90261529CAAB4CB14 /* Pods_radyumTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_radyumTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -192,6 +194,7 @@
 				3D4B762E2411509800384E5D /* DisplayReviewViewController.swift */,
 				3DC6A69A241928370035154C /* RestaurantReviewsTableViewController.swift */,
 				3DC6A69E241934170035154C /* RestaurantReviewsTableViewCell.swift */,
+				840F7B4A244494B70036CF6E /* EditReviewViewController.swift */,
 				3D1B6F39241A938300126F7A /* UserReviewsTableViewController.swift */,
 				3D1B6F3B241A945200126F7A /* UserReviewsTableViewCell.swift */,
 			);
@@ -507,6 +510,7 @@
 				3D87BBE4240BF7A90037AF4F /* Firebase+Restaurant.swift in Sources */,
 				3D1B6F3C241A945200126F7A /* UserReviewsTableViewCell.swift in Sources */,
 				3D03AA4023D6E826001D08DC /* FeedPageTableViewController.swift in Sources */,
+				840F7B4B244494B70036CF6E /* EditReviewViewController.swift in Sources */,
 				3D1B6F3A241A938300126F7A /* UserReviewsTableViewController.swift in Sources */,
 				3D03AA4D23D70920001D08DC /* ModelSQL.swift in Sources */,
 				841B7C8A2427A12400C1D173 /* Firebase+Review.swift in Sources */,
