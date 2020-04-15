@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -387,6 +387,7 @@
                                 <state key="normal" title="Edit Picture"/>
                                 <connections>
                                     <action selector="addPicture:" destination="YiF-nn-GtJ" eventType="touchUpInside" id="z2r-hS-cyz"/>
+                                    <action selector="editPicture:" destination="LoP-Hv-76v" eventType="touchUpInside" id="8BQ-I8-paI"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c3v-iQ-q6s">
@@ -399,23 +400,43 @@
                                 <rect key="frame" x="16" y="20" width="34" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="BackAction:" destination="LoP-Hv-76v" eventType="touchUpInside" id="0GE-Cx-0UA"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6x1-tr-KBX">
                                 <rect key="frame" x="322" y="20" width="37" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="DoneAction:" destination="LoP-Hv-76v" eventType="touchUpInside" id="UxR-Kf-90q"/>
+                                </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="khx-Zd-xTz">
+                                <rect key="frame" x="242" y="444" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" cocoaTouchSystemColor="darkTextColor"/>
+                            </activityIndicatorView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="h1Q-ld-3Po">
+                                <rect key="frame" x="177" y="206" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" cocoaTouchSystemColor="darkTextColor"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="abd-Ew-P6S"/>
                     </view>
                     <navigationItem key="navigationItem" id="I1a-Dc-0qJ"/>
                     <connections>
+                        <outlet property="picSpinner" destination="khx-Zd-xTz" id="ZHb-jW-08M"/>
+                        <outlet property="returnSpinner" destination="h1Q-ld-3Po" id="j9H-3s-hBc"/>
                         <outlet property="reviewPicture" destination="aV4-h8-B8z" id="dLt-NO-gYr"/>
                         <outlet property="reviewText" destination="c3v-iQ-q6s" id="fNt-ef-f1q"/>
+                        <segue destination="aOi-K7-WHi" kind="unwind" identifier="backToDisplayReview" unwindAction="backToDisplayReviewWithSegue:" id="x58-zG-Gqa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vat-Z2-boa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="aOi-K7-WHi" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="5802.3999999999996" y="1144.6776611694154"/>
         </scene>
@@ -903,18 +924,18 @@
             <point key="canvasLocation" x="620" y="949"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="feast2Blur3.fw" width="736" height="1308"/>
-        <image name="login screen3.1.fw" width="736" height="1308"/>
-        <image name="logo1.fw" width="170" height="180"/>
-        <image name="map" catalog="system" width="64" height="56"/>
-        <image name="message" catalog="system" width="64" height="56"/>
-        <image name="person" catalog="system" width="64" height="58"/>
-        <image name="radyumtext" width="354" height="81"/>
-        <image name="tuningfork" catalog="system" width="64" height="58"/>
-    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="slU-iX-Q3m"/>
         <segue reference="BCv-gG-NPY"/>
     </inferredMetricsTieBreakers>
+    <resources>
+        <image name="feast2Blur3.fw" width="736" height="1308"/>
+        <image name="login screen3.1.fw" width="736" height="1308"/>
+        <image name="logo1.fw" width="170" height="180"/>
+        <image name="map" catalog="system" width="128" height="113"/>
+        <image name="message" catalog="system" width="128" height="113"/>
+        <image name="person" catalog="system" width="128" height="117"/>
+        <image name="radyumtext" width="354" height="81"/>
+        <image name="tuningfork" catalog="system" width="128" height="116"/>
+    </resources>
 </document>
