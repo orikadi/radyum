@@ -10,8 +10,12 @@ import UIKit
 
 class EditReviewViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     var review:Review?
-    //TODO: buttons functionality, alert on done "are you sure"
-    //when exiting back to display review, edit the display controller's review to this updated one?
+    //maybe add "are you sure" alert?
+    //yoav todo:
+    //DoneAction - put the picture url into the parameter
+    //after done the returned page is also updated
+    //delete button and segue (delete should return you to the page before the display review since its deleted)
+    //spinners wherever needed
     @IBOutlet weak var reviewText: UITextField!
     @IBOutlet weak var reviewPicture: UIImageView!
     @IBOutlet weak var returnSpinner: UIActivityIndicatorView!
@@ -31,8 +35,9 @@ class EditReviewViewController: UIViewController, UIImagePickerControllerDelegat
     @IBAction func BackAction(_ sender: Any) {
         performSegue(withIdentifier: "backToDisplayReview", sender: self)
     }
+    
     @IBAction func DoneAction(_ sender: Any) {
-        //TODO: edit review in model
+        Model.modelFirebaseInstance.EditReview(review: review!, text: reviewText.text!, picture: "123")
         performSegue(withIdentifier: "backToDisplayReview", sender: self)
     }
     @IBAction func editPicture(_ sender: Any) {

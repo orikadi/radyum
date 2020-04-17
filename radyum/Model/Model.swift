@@ -55,8 +55,8 @@ class Model{
                 if review.lastUpdate! > lud {lud = review.lastUpdate!}
             }
             if (data!.count == 0) {print("no reviews found")} //test
-            //update the restaurants local last update date
-            Restaurant.setLastUpdate(lastUpdated: lud)
+            //update the reviews local last update date
+            Review.setLastUpdate(lastUpdated: lud)
             // get the complete restaurant list
             let finalData = Review.getAllReviewsFromDb()
             callback(finalData);

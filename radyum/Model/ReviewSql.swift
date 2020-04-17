@@ -58,7 +58,6 @@ extension Review{
                 let resId = String(cString:sqlite3_column_text(sqlite3_stmt,3)!)
                 let resName = String(cString:sqlite3_column_text(sqlite3_stmt,4)!)
                 let text = String(cString:sqlite3_column_text(sqlite3_stmt,5)!)
-                //make a get function that gets user from email?
                 let review = Review(id: id, userEmail: userEmail, userName: userName, resId: resId, resName: resName, text: text)
                 review.picture = String(cString:sqlite3_column_text(sqlite3_stmt,6)!)
                 data.append(review)
@@ -66,6 +65,36 @@ extension Review{
         }
         sqlite3_finalize(sqlite3_stmt)
         return data
+    }
+    
+    static func updateReviewOnSql(review:Review){
+        let revId = review.id!.cString(using: .utf8)
+        let text = review.text.cString(using: .utf8)
+        let picture = review.picture.cString(using: .utf8)
+        let updateStatementString = "UPDATE REVIEWS SET REVIEW_TEXT = ?, PICTURE = ? WHERE REV_ID = ?;"
+        var updateStatement: OpaquePointer?
+        if sqlite3_prepare_v2(ModelSQL.instance.database, updateStatementString, -1, &updateStatement, nil) == SQLITE_OK{
+            sqlite3_bind_text(updateStatement, 1, text, -1, nil)
+            sqlite3_bind_text(updateStatement, 2, picture, -1, nil)
+            sqlite3_bind_text(updateStatement, 3, revId, -1, nil)
+            if sqlite3_step(updateStatement) == SQLITE_DONE{}
+        }
+        sqlite3_finalize(updateStatement)
+    }
+    
+    static func deleteReviewOnSql(review:Review){
+        let deleteStatementString = "DELETE FROM REVIEWS WHERE REV_ID = ?;"
+        
+        var deleteStatement: OpaquePointer? = nil
+        if sqlite3_prepare_v2(ModelSQL.instance.database, deleteStatementString, -1, &deleteStatement, nil) == SQLITE_OK {
+            
+            sqlite3_bind_text(deleteStatement, 1, review.id,-1,nil)
+            
+            if sqlite3_step(deleteStatement) == SQLITE_DONE {
+                print("Deleting review")
+            }
+        }
+        sqlite3_finalize(deleteStatement)
     }
 
     static func setLastUpdate(lastUpdated:Int64){

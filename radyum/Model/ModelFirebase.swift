@@ -43,10 +43,12 @@ class ModelFirebase{
         }
         return user
     }
-        func getUserByEmail(userEmail:String, callback:@escaping (User)->Void) {
+    
+    //delete??
+    func getUserByEmail(userEmail:String, callback:@escaping (User)->Void) {
     
     
-           }
+    }
     
     func getAllRestaurants(since:Int64, callback: @escaping ([Restaurant]?)->Void){
          let db = Firestore.firestore()
@@ -126,7 +128,7 @@ class ModelFirebase{
         db.collection("users").document(Model.userId!).updateData(["avatar":url])
     }
     
-    //TODO: ADD MODELEVENT FOR REVIEWS WITH POST AND OBSERVE
+    
     func addReview(user:User, restaurant:Restaurant, text:String, picture:String?) {
         let db = Firestore.firestore()
         var ref: DocumentReference? = nil
@@ -146,6 +148,20 @@ class ModelFirebase{
                     }
                 }
         ref?.setData((["id": ref!.documentID]),merge: true)
+        ModelEvents.ReviewDataEvent.post()
+    }
+    
+    func EditReview(review:Review, text:String, picture:String) {
+        let db = Firestore.firestore()
+    db.collection("reviews").document(review.id!).setData((["text":text, "picture":picture, "lastUpdate":Timestamp()]), merge: true)
+        Review.updateReviewOnSql(review: review)
+        ModelEvents.ReviewDataEvent.post()
+    }
+    
+    func DeleteReview(review:Review) {
+        let db = Firestore.firestore()
+        db.collection("reviews").document(review.id!).delete()
+        Review.deleteReviewOnSql(review: review)
         ModelEvents.ReviewDataEvent.post()
     }
     
