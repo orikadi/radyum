@@ -21,6 +21,7 @@ class EditReviewViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var returnSpinner: UIActivityIndicatorView!
     @IBOutlet weak var picSpinner: UIActivityIndicatorView!
     var picUrl = ""
+    var backTo = ""
     
     
     override func viewDidLoad() {
@@ -70,5 +71,17 @@ class EditReviewViewController: UIViewController, UIImagePickerControllerDelegat
             vc.viewDidLoad()
         }
     }
-
+    @IBAction func deleteAction(_ sender: Any) {
+        Model.modelFirebaseInstance.DeleteReview(review: review!)
+        if(backTo == "RestaurantReviewsTableViewController"){
+            self.performSegue(withIdentifier: "backToRestaurantReviews", sender: self)
+        }
+        if(backTo == "UserReviewsTableViewController"){
+            self.performSegue(withIdentifier: "backToUsersReviews", sender: self)
+        }
+        if(backTo == "FeedPageTableViewController"){
+            self.performSegue(withIdentifier: "backToFeed", sender: self)
+        }
+    }
+    
 }

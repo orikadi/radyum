@@ -49,6 +49,7 @@ class DisplayReviewViewController: UIViewController {
         if segue.identifier == "toEditReview" {
             let vc:EditReviewViewController = segue.destination as! EditReviewViewController
             vc.review = review
+            vc.backTo = returnTo!
         }
     }
     

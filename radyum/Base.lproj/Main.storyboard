@@ -422,6 +422,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="color" cocoaTouchSystemColor="darkTextColor"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e0I-dR-p7c">
+                                <rect key="frame" x="314" y="56" width="45" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Delete"/>
+                                <connections>
+                                    <action selector="deleteAction:" destination="LoP-Hv-76v" eventType="touchUpInside" id="jg2-yR-QRv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="abd-Ew-P6S"/>
@@ -434,6 +442,9 @@
                         <outlet property="reviewText" destination="c3v-iQ-q6s" id="fNt-ef-f1q"/>
                         <segue destination="aOi-K7-WHi" kind="unwind" identifier="backToDisplayReview" unwindAction="backToDisplayReviewWithSegue:" id="x58-zG-Gqa"/>
                         <segue destination="aOi-K7-WHi" kind="unwind" identifier="backToDisplayReviewAfterDone" unwindAction="backToDisplayReviewWithSegue:" id="qnO-HI-Bcb"/>
+                        <segue destination="aOi-K7-WHi" kind="unwind" identifier="backToRestaurantReviews" unwindAction="backToRestaurantReviewsWithSegue:" id="gLn-Bh-GWy"/>
+                        <segue destination="aOi-K7-WHi" kind="unwind" identifier="backToUsersReviews" unwindAction="toUserReviewsTableWithSegue:" id="SvB-GU-4CE"/>
+                        <segue destination="aOi-K7-WHi" kind="unwind" identifier="backToFeed" unwindAction="backToFeedWithSegue:" id="1yq-5q-UUX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vat-Z2-boa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -926,7 +937,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="slU-iX-Q3m"/>
+        <segue reference="edw-3a-aqv"/>
         <segue reference="BCv-gG-NPY"/>
     </inferredMetricsTieBreakers>
     <resources>
