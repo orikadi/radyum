@@ -20,6 +20,7 @@ class EditReviewViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var reviewPicture: UIImageView!
     @IBOutlet weak var returnSpinner: UIActivityIndicatorView!
     @IBOutlet weak var picSpinner: UIActivityIndicatorView!
+    var picUrl = ""
     
     
     override func viewDidLoad() {
@@ -37,8 +38,12 @@ class EditReviewViewController: UIViewController, UIImagePickerControllerDelegat
     }
     
     @IBAction func DoneAction(_ sender: Any) {
-        Model.modelFirebaseInstance.EditReview(review: review!, text: reviewText.text!, picture: "123")
-        performSegue(withIdentifier: "backToDisplayReview", sender: self)
+        returnSpinner.isHidden = false
+            Model.modelFirebaseInstance.saveImage(image: self.reviewPicture.image!, kind: "review") { (url) in
+            self.picUrl = url
+                Model.modelFirebaseInstance.EditReview(review: self.review!, text: self.reviewText.text!, picture: self.picUrl)
+                self.performSegue(withIdentifier: "backToDisplayReviewAfterDone", sender: self)
+            }
     }
     @IBAction func editPicture(_ sender: Any) {
         picSpinner.isHidden = false
@@ -59,6 +64,11 @@ class EditReviewViewController: UIViewController, UIImagePickerControllerDelegat
         dismiss(animated: true, completion: nil)
     }
 
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {//TODO: not loading new stuff maybe instead of unwind should just use normal segue back? (back button still returns with unwind to the correct page...
+        if(segue.identifier == "backToDisplayReviewAfterDone"){
+            let vc:DisplayReviewViewController = segue.destination as! DisplayReviewViewController
+            vc.viewDidLoad()
+        }
+    }
 
 }

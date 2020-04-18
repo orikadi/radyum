@@ -433,6 +433,7 @@
                         <outlet property="reviewPicture" destination="aV4-h8-B8z" id="dLt-NO-gYr"/>
                         <outlet property="reviewText" destination="c3v-iQ-q6s" id="fNt-ef-f1q"/>
                         <segue destination="aOi-K7-WHi" kind="unwind" identifier="backToDisplayReview" unwindAction="backToDisplayReviewWithSegue:" id="x58-zG-Gqa"/>
+                        <segue destination="aOi-K7-WHi" kind="unwind" identifier="backToDisplayReviewAfterDone" unwindAction="backToDisplayReviewWithSegue:" id="qnO-HI-Bcb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vat-Z2-boa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
