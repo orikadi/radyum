@@ -44,12 +44,16 @@ class DisplayReviewViewController: UIViewController {
             performSegue(withIdentifier: "backToFeed", sender: self)
         }
     }
+    @IBAction func editAction(_ sender: Any) {
+        performSegue(withIdentifier: "toEditReview", sender: self)
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toEditReview" {
             let vc:EditReviewViewController = segue.destination as! EditReviewViewController
             vc.review = review
             vc.backTo = returnTo!
+            //self.dismiss(animated: true, completion: nil)
         }
     }
     

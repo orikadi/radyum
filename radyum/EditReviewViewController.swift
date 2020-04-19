@@ -43,7 +43,15 @@ class EditReviewViewController: UIViewController, UIImagePickerControllerDelegat
             Model.modelFirebaseInstance.saveImage(image: self.reviewPicture.image!, kind: "review") { (url) in
             self.picUrl = url
                 Model.modelFirebaseInstance.EditReview(review: self.review!, text: self.reviewText.text!, picture: self.picUrl)
-                self.performSegue(withIdentifier: "backToDisplayReviewAfterDone", sender: self)
+                if(self.backTo == "RestaurantReviewsTableViewController"){
+                    self.performSegue(withIdentifier: "backToRestaurantReviews", sender: self)
+                }
+                if(self.backTo == "UserReviewsTableViewController"){
+                    self.performSegue(withIdentifier: "backToUsersReviews", sender: self)
+                }
+                if(self.backTo == "FeedPageTableViewController"){
+                    self.performSegue(withIdentifier: "backToFeed", sender: self)
+                }
             }
     }
     @IBAction func editPicture(_ sender: Any) {
@@ -65,12 +73,6 @@ class EditReviewViewController: UIViewController, UIImagePickerControllerDelegat
         dismiss(animated: true, completion: nil)
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {//TODO: not loading new stuff maybe instead of unwind should just use normal segue back? (back button still returns with unwind to the correct page...
-        if(segue.identifier == "backToDisplayReviewAfterDone"){
-            let vc:DisplayReviewViewController = segue.destination as! DisplayReviewViewController
-            vc.viewDidLoad()
-        }
-    }
     @IBAction func deleteAction(_ sender: Any) {
         Model.modelFirebaseInstance.DeleteReview(review: review!)
         if(backTo == "RestaurantReviewsTableViewController"){
