@@ -30,8 +30,8 @@ class SignUpViewController: UIViewController {
         userText.attributedPlaceholder =
         NSAttributedString(string: "Username", attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
                
-        signUpButton.applyDesign()
-        backButton.applyDesign()
+        signUpButton.applyDesign1()
+        backButton.applyDesign1()
         
         // Do any additional setup after loading the view.
     }

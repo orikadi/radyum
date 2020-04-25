@@ -21,6 +21,7 @@ class ProfilePgeViewController: UIViewController, UIImagePickerControllerDelegat
 //    @IBOutlet weak var numOfReviewsTitle: UILabel!
     @IBOutlet weak var picture: UIImageView!
     @IBOutlet weak var editPictureButton: UIButton!
+    @IBOutlet weak var viewReviewbutton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,8 +41,10 @@ class ProfilePgeViewController: UIViewController, UIImagePickerControllerDelegat
         else{
             picture.kf.setImage(with: URL(string: "https://firebasestorage.googleapis.com/v0/b/radyum-4db50.appspot.com/o/defaultUserPic.png?alt=media&token=d4567663-98cd-4f68-a2ef-f5ce570ac3fa"))
         }
-        logoutButton.applyDesign()
-        editPictureButton.applyDesign()
+        logoutButton.applyDesign1()
+        viewReviewbutton.applyDesign1()
+        editPictureButton.applyDesign1()
+          userNameTitle.applyDesign2()
     }
     
     @IBAction func editPicture(_ sender: Any) {
@@ -94,3 +97,4 @@ class ProfilePgeViewController: UIViewController, UIImagePickerControllerDelegat
     @IBAction func toProfilePage(segue:UIStoryboardSegue){}
     
 }
+
