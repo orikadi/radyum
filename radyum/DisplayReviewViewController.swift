@@ -31,6 +31,8 @@ class DisplayReviewViewController: UIViewController {
         if(review?.picture != ""){
             picture.kf.setImage(with: URL(string: review!.picture))
         }
+        editButton.applyDesign()
+
     }
     
     @IBAction func backAction(_ sender: Any) {
