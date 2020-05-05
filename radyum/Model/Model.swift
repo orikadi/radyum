@@ -135,6 +135,8 @@ extension UILabel {
         self.layer.shadowRadius = 4
         self.layer.shadowOpacity = 0.5
         self.layer.shadowOffset = CGSize(width: 0, height: 0)
+        self.layer.cornerRadius = 10
+        self.clipsToBounds = true
     
     }
 }
@@ -147,6 +149,8 @@ extension UIImageView {
         self.layer.shadowRadius = 4
         self.layer.shadowOpacity = 0.5
         self.layer.shadowOffset = CGSize(width: 0, height: 0)
+        self.layer.cornerRadius = 10
+        self.clipsToBounds = true
     
     }
 }
