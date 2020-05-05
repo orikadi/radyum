@@ -22,6 +22,11 @@ class EditReviewViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var picSpinner: UIActivityIndicatorView!
     var picUrl = ""
     var backTo = ""
+    @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var deleteButton: UIButton!
+    @IBOutlet weak var editButton: UIButton!
+    @IBOutlet weak var mainLabel: UILabel!
     
     
     override func viewDidLoad() {
@@ -32,6 +37,13 @@ class EditReviewViewController: UIViewController, UIImagePickerControllerDelegat
         if(review?.picture != ""){
             reviewPicture.kf.setImage(with: URL(string: review!.picture))
         }
+        
+        backButton.applyDesign1()
+        doneButton.applyDesign1()
+        deleteButton.applyDesign1()
+        editButton.applyDesign1()
+        reviewPicture.applyDesign3()
+        mainLabel.applyDesign2()
     }
     
     @IBAction func BackAction(_ sender: Any) {

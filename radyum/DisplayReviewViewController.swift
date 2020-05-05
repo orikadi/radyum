@@ -15,6 +15,8 @@ class DisplayReviewViewController: UIViewController {
     @IBOutlet weak var reviewTextLabel: UILabel!
     @IBOutlet weak var picture: UIImageView!
     @IBOutlet weak var editButton: UIButton!
+    @IBOutlet weak var bgColor: UILabel!
+    @IBOutlet weak var bgColor2: UILabel!
     var review:Review?
     var restaurantName:String?
     var returnTo:String?
@@ -31,7 +33,10 @@ class DisplayReviewViewController: UIViewController {
         if(review?.picture != ""){
             picture.kf.setImage(with: URL(string: review!.picture))
         }
-        editButton.applyDesign()
+        editButton.applyDesign1()
+        bgColor.applyDesign2()
+        reviewTextLabel.applyDesign2()
+        picture.applyDesign3()
 
     }
     
@@ -71,3 +76,5 @@ class DisplayReviewViewController: UIViewController {
     */
 
 }
+
+

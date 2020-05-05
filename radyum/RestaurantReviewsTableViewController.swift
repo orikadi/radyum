@@ -27,8 +27,7 @@ class RestaurantReviewsTableViewController: UITableViewController {
         self.refreshControl?.beginRefreshing()
         reloadData();
         
-        backButton.applyDesign()
-
+        
     }
     
     @objc func reloadData(){

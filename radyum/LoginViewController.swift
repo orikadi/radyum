@@ -106,43 +106,6 @@ class LoginViewController: UIViewController {
 
 }
 
-extension UIButton {
-    func  applyDesign(){
-        self.backgroundColor = UIColor.darkGray.withAlphaComponent(0.35);
-        self.layer.cornerRadius = 7
-        self.setTitleColor(UIColor.white, for: .normal)
-        self.layer.shadowColor = UIColor.darkGray.cgColor
-        self.layer.shadowRadius = 4
-        self.layer.shadowOpacity = 0.5
-        self.layer.shadowOffset = CGSize(width: 0, height: 0)
-    
-    }
-}
-
-extension UIButton {
-    func  applyDesign1(){
-        self.backgroundColor = UIColor.red.withAlphaComponent(0.5);
-        self.layer.cornerRadius = 7
-        self.setTitleColor(UIColor.white, for: .normal)
-        self.layer.shadowColor = UIColor.darkGray.cgColor
-        self.layer.shadowRadius = 4
-        self.layer.shadowOpacity = 0.5
-        self.layer.shadowOffset = CGSize(width: 0, height: 0)
-    
-    }
-}
-
-extension UILabel {
-    func  applyDesign2(){
-        self.backgroundColor = UIColor.red.withAlphaComponent(0.5);
-        self.layer.cornerRadius = 7
-        self.layer.shadowColor = UIColor.darkGray.cgColor
-        self.layer.shadowRadius = 4
-        self.layer.shadowOpacity = 0.5
-        self.layer.shadowOffset = CGSize(width: 0, height: 0)
-    
-    }
-}
 
 
 
