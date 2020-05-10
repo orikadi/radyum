@@ -17,9 +17,14 @@ class AddReviewViewController: UIViewController, UIImagePickerControllerDelegate
     @IBOutlet weak var restaurantName: UILabel!
     @IBOutlet weak var picture: UIImageView!
     @IBOutlet weak var reviewText: UITextField!
-    @IBOutlet var backButton: UIView!
-    var picUrl:String = ""
     
+    @IBOutlet weak var theBackButton: UIButton!
+    
+    @IBOutlet weak var backButton: UIButton!
+    var picUrl:String = ""
+    @IBOutlet weak var addPicButton: UIButton!
+    @IBOutlet weak var addReviewLabel: UILabel!
+    @IBOutlet weak var addReviewButton: UIButton!
     
     
     override func viewDidLoad() {
@@ -28,6 +33,15 @@ class AddReviewViewController: UIViewController, UIImagePickerControllerDelegate
         returnSpinner.isHidden = true
         restaurantName.text = restaurant?.name
         // Do any additional setup after loading the view.
+
+        restaurantName.applyDesign2()
+        addPicButton.applyDesign1()
+        addReviewLabel.applyDesign2()
+        addReviewButton.applyDesign1()
+        picture.applyDesign3()
+        theBackButton.applyDesign1()
+        
+        
     }
     
     //backToRestaurantProfile

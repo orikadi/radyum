@@ -20,6 +20,8 @@ class DisplayReviewViewController: UIViewController {
     var review:Review?
     var restaurantName:String?
     var returnTo:String?
+    @IBOutlet weak var theBackButton1: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +39,8 @@ class DisplayReviewViewController: UIViewController {
         bgColor.applyDesign2()
         reviewTextLabel.applyDesign2()
         picture.applyDesign3()
-
+        theBackButton1.applyDesign1()
+        
     }
     
     @IBAction func backAction(_ sender: Any) {
