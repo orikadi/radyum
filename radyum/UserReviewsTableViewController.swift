@@ -53,6 +53,7 @@ class UserReviewsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
            let cell:UserReviewsTableViewCell = tableView.dequeueReusableCell(withIdentifier: "UserReviewCell", for: indexPath) as! UserReviewsTableViewCell
            let review = data[indexPath.row]
+           cell.resName.text = review.resName
            cell.reviewText.text = review.text
            cell.reviewImage.image = UIImage(named: "picture") //named: picture ?
            if review.picture != "" {
