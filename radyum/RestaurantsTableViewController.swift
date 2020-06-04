@@ -10,7 +10,6 @@ import UIKit
 
 class RestaurantsTableViewController: UITableViewController {
     
-    @IBOutlet var searchBar: UITableView! //DELETE
     var data = [Restaurant]()
     var selected:Restaurant?
     

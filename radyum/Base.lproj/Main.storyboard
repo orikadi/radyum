@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -856,14 +856,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="nX5-LR-zqd">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="RestaurantCell" rowHeight="82" id="Usl-fI-bfY" customClass="RestaurantTableViewCell" customModule="radyum" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="375" height="82"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="82"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Usl-fI-bfY" id="RQM-EZ-Rcd">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="82"/>
@@ -912,7 +907,6 @@
                     <tabBarItem key="tabBarItem" title="Restaurants" image="tuningfork" catalog="system" selectedImage="tuningfork" id="cpg-tM-8cc"/>
                     <navigationItem key="navigationItem" id="GL5-NO-bbz"/>
                     <connections>
-                        <outlet property="searchBar" destination="bkc-B0-BjA" id="yCx-tm-15W"/>
                         <segue destination="UVe-fr-dM8" kind="show" identifier="fromRestaurantTableToRestaurantProfile" id="BCv-gG-NPY"/>
                     </connections>
                 </tableViewController>
@@ -971,20 +965,20 @@
             <point key="canvasLocation" x="620" y="949"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="edw-3a-aqv"/>
+        <segue reference="BCv-gG-NPY"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="cleanbg" width="736" height="1308"/>
         <image name="login screen" width="736" height="1308"/>
         <image name="logo1.fw" width="170" height="180"/>
-        <image name="map" catalog="system" width="64" height="56"/>
-        <image name="message" catalog="system" width="64" height="56"/>
-        <image name="person" catalog="system" width="64" height="58"/>
+        <image name="map" catalog="system" width="128" height="113"/>
+        <image name="message" catalog="system" width="128" height="113"/>
+        <image name="person" catalog="system" width="128" height="117"/>
         <image name="profile screen" width="736" height="1308"/>
         <image name="radyumtext" width="354" height="81"/>
         <image name="signup screen" width="736" height="1308"/>
-        <image name="tuningfork" catalog="system" width="64" height="58"/>
+        <image name="tuningfork" catalog="system" width="128" height="116"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="lVW-7q-wWF"/>
-        <segue reference="BCv-gG-NPY"/>
-    </inferredMetricsTieBreakers>
 </document>
