@@ -23,29 +23,7 @@ extension Review{
         }
          else {
             ts = json["lastUpdate"] as! Timestamp
-        }
-        //test:
-//        var ts:Timestamp? = nil
-//        if (json["lastUpdate"] is NSNull) {
-//                while(ts==nil) {
-//                    let db = Firestore.firestore()
-//                     db.collection("reviews").document(id).getDocument { (document, error) in
-//                         if let document = document, document.exists {
-//                             let data = document.data()
-//                            if (!(data!["lastUpdate"] is NSNull)) {
-//                                ts = data!["lastUpdate"] as? Timestamp
-//                            }
-//                         } else {
-//                             print("Current user document does not exist")
-//                         }
-//                     }
-//                }
-//        }
-//        else {
-//            ts = json["lastUpdate"] as! Timestamp
-//        }
-        
-//        let ts = json["lastUpdate"] as? Timestamp //TODO: fix NSNull on quick review adding with picture
+        }	
         self.init(id:id, userEmail:userEmail, userName:userName, resId:resId, resName:resName, text: text)
         picture = pic
         lastUpdate = ts.seconds

@@ -10,7 +10,7 @@ import Foundation
 import Firebase
 
 class Model{
-    //TODO: ADD LOG OUT BUTTON IN USER PROFILE
+  
     static let instance = Model()
     static let modelFirebaseInstance:ModelFirebase = ModelFirebase()
     static var currentUser:User?
