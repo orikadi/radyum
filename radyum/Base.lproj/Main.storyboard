@@ -483,7 +483,7 @@
         <scene sceneID="NCe-P9-wZQ">
             <objects>
                 <tableViewController modalPresentationStyle="fullScreen" id="Ouz-Ll-8nn" customClass="RestaurantReviewsTableViewController" customModule="radyum" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="3EU-40-KIv">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="3EU-40-KIv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -503,8 +503,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="text" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B0K-AG-EK4">
-                                            <rect key="frame" x="130" y="-1" width="245" height="88"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="text" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B0K-AG-EK4">
+                                            <rect key="frame" x="130" y="11" width="224" height="66"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -515,7 +515,11 @@
                                         </imageView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="B0K-AG-EK4" firstAttribute="top" secondItem="vDc-zP-hck" secondAttribute="topMargin" id="EMb-HT-xjU"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="B0K-AG-EK4" secondAttribute="trailing" constant="5" id="Smy-dB-R5I"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="B0K-AG-EK4" secondAttribute="trailing" constant="5" id="gSp-rf-Fiq"/>
                                         <constraint firstItem="B0K-AG-EK4" firstAttribute="leading" secondItem="vDc-zP-hck" secondAttribute="leading" constant="130" id="rtJ-WN-dXX"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="B0K-AG-EK4" secondAttribute="bottom" id="wSh-cp-65e"/>
                                         <constraint firstItem="OTm-Mp-tIB" firstAttribute="leading" secondItem="vDc-zP-hck" secondAttribute="leading" id="xp8-gI-rmY"/>
                                     </constraints>
                                 </tableViewCellContentView>
