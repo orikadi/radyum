@@ -52,31 +52,7 @@ class LoginViewController: UIViewController {
         })
         
         
-        /*{ (authDataResult:AuthDataResult?, error:Error?)
-            if error != nil {
-                let alert = UIAlertController(title: "WARNING", message: "need to fill all text boxes", preferredStyle: UIAlertController.Style.alert)
-                alert.addAction(UIAlertAction(title:"CONFIRM", style:UIAlertAction.Style.default, handler: {(action) in
-                    //alert.dismiss(animated: true, completion: nil)
-                }))
-                self!.present(alert, animated:true, completion:nil)
-                
-            }
-            else {
-                
-            }
-        }*/
-        
-        
-        /*Auth.auth().signIn(withEmail: emailText.text!, password: passwordText.text!) { [weak self] authResult, error in
-          guard let strongSelf = self else { let alert = UIAlertController(title: "WARNING", message: "need to fill all text boxes", preferredStyle: UIAlertController.Style.alert)
-          alert.addAction(UIAlertAction(title:"CONFIRM", style:UIAlertAction.Style.default, handler: {(action) in
-              //alert.dismiss(animated: true, completion: nil)
-          }))
-            self!.present(alert, animated:true, completion:nil)
-            return
-            }
-          // ...
-        }*/
+  
  
     }
     

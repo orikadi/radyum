@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import Kingfisher
 
-//TODO: if imidiatly after logingin you move to profile page then no user information is displayed
+
 
 class ProfilePgeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var logoutButton: UIButton!
@@ -26,15 +26,9 @@ class ProfilePgeViewController: UIViewController, UIImagePickerControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         spinner.isHidden = true
-        //let user = ModelFirebase.instance.getCurrentUser()
         user = Model.currentUser
         userNameTitle.text = user!.name
-//        if user!.reviews != nil {
-//            numOfReviewsTitle.text = String(user!.reviews!.count)
-//        }
-//        else {
-//            numOfReviewsTitle.text = String(0)
-//        }
+
         if user!.avatar != ""{
             picture.kf.setImage(with: URL(string: user!.avatar!))
         }

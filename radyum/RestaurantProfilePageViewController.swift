@@ -36,7 +36,6 @@ class RestaurantProfilePageViewController: UIViewController {
         nameTitle.applyDesign2()
         
 
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func backAction(_ sender: Any) {

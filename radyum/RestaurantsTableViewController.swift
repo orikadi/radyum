@@ -19,7 +19,6 @@ class RestaurantsTableViewController: UITableViewController {
         self.refreshControl = UIRefreshControl()
         self.refreshControl?.addTarget(self, action: #selector(reloadData), for: .valueChanged)
          
-        //OBSERVE REDUNDANT? no post() (no adding of restaurants)
         ModelEvents.RestaurantDataEvent.observe {
             self.refreshControl?.beginRefreshing()
             self.reloadData();

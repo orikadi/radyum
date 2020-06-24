@@ -10,12 +10,7 @@ import UIKit
 
 class EditReviewViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     var review:Review?
-    //maybe add "are you sure" alert?
-    //yoav todo:
-    //DoneAction - put the picture url into the parameter
-    //after done the returned page is also updated
-    //delete button and segue (delete should return you to the page before the display review since its deleted)
-    //spinners wherever needed
+    
     @IBOutlet weak var reviewText: UITextField!
     @IBOutlet weak var reviewPicture: UIImageView!
     @IBOutlet weak var returnSpinner: UIActivityIndicatorView!

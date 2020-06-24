@@ -69,10 +69,10 @@ class MapPageViewController: UIViewController,CLLocationManagerDelegate {
             case .notDetermined:
                 locationManager.requestWhenInUseAuthorization()
             case .restricted:
-                // Show an alert letting them know what's up
+                
                 let alert = UIAlertController(title: "WARNING", message: "restricted", preferredStyle: UIAlertController.Style.alert)
                 alert.addAction(UIAlertAction(title:"CONFIRM", style:UIAlertAction.Style.default, handler: {(action) in
-                    //alert.dismiss(animated: true, completion: nil)
+                   
                 }))
                 break
             case .authorizedAlways:

@@ -56,7 +56,6 @@ class FeedPageTableViewController: UITableViewController {
            if review.picture != "" {
                cell.reviewImage.kf.setImage(with: URL(string: review.picture))
            }
-        //cell.textLabel?.numberOfLines = 0
 
            return cell
     }
